@@ -4,9 +4,9 @@ import { Player, ControlBar } from 'video-react';
 import { Button } from 'reactstrap';
 
 const sources = {
-  game1: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
-  game2: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
-  game3: 'http://media.w3.org/2010/05/bunny/movie.mp4',
+  trailer1: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
+  trailer2: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
+  trailer3: 'http://media.w3.org/2010/05/bunny/movie.mp4',
 };
 
 export default class PlayerControlExample extends Component {
