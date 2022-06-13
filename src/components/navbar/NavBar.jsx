@@ -57,15 +57,15 @@ function NavBar() {
             />
             <Button variant="outline-dark"><img height="20" src="icon-lupa.png" alt="buscar"/></Button>
         </Form>
-        {/* <Button variant="link"> */}
-        <DropdownButton variant="btn-primary" align={{ lg: 'end' }} id="dropdown-basic" title="Perfil">
-        {/* <img height="20" src="icon-account.png" alt="Perfil"/> */}
+        <Button variant="link">
+        {/* <img height="20" src="icon-account.png" alt="Perfil" className="perfil-img" /> */}
+        <DropdownButton variant="btn-primary" align={{ lg: 'end' }} id="dropdown-basic" className="profile-button dropdown-toggle">
             <Dropdown.Item eventKey="1">Mi perfil</Dropdown.Item>
             <Dropdown.Item eventKey="2">Lista de deseados</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item eventKey="4">Cerrar sesión</Dropdown.Item>
         </DropdownButton>        
-        {/* </Button>         */}
+        </Button>        
         </Navbar.Collapse>
     </Container>
     </Navbar>

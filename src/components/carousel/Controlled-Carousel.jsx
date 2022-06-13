@@ -10,11 +10,12 @@ function ControlledCarousel() {
   };
 
   return (
+    <div className="carousel">
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          className="d-block"
+          src="img-test1.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -24,8 +25,8 @@ function ControlledCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          className="d-block"
+          src="img-test2.jpg"
           alt="Second slide"
         />
 
@@ -36,8 +37,8 @@ function ControlledCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          className="d-block"
+          src="img-test3.jpg"
           alt="Third slide"
         />
 
@@ -47,9 +48,10 @@ function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
   );
 }
 
-render(<ControlledCarousel />);
+// render(<ControlledCarousel />);
 
 export default ControlledCarousel;

@@ -5,9 +5,13 @@
 .fontSize{
     font-size:1.08em;
 }
-
+/* 
 .btn-primary {
-    color: rgba(255,255,255,.55);
     background-color: #330D71;
     border-color: #212529;
+} */
+
+.profile-button {        
+    height: 20px;
+    content: url("./icon-account.png")!important;
 }
