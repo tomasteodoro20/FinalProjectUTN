@@ -4,9 +4,9 @@ import { Player, ControlBar } from 'video-react';
 import { Button } from 'reactstrap';
 
 const sources = {
-  trailer1: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
-  trailer2: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
-  trailer3: 'http://media.w3.org/2010/05/bunny/movie.mp4',
+  trailer1: 'https://www.youtube.com/watch?v=9pmw4z3k_zg', //The Last of Us
+  trailer2: 'https://www.youtube.com/watch?v=xIl2z5wwjdA', //Star Wars Jedi Fallen Order
+  trailer3: 'https://www.youtube.com/watch?v=jPeyWo1fWRw', //Ghost of Tsushima
 };
 
 export default class PlayerControlExample extends Component {
@@ -14,7 +14,7 @@ export default class PlayerControlExample extends Component {
     super(props, context);
 
     this.state = {
-      source: sources.game1
+      source: sources.trailer1
     };
 
     this.play = this.play.bind(this);
