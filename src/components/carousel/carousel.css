@@ -1,8 +1,11 @@
 .carousel img{
     height: 25vw;
+    margin: auto;
 }
 
 .carousel{
     background-color: black;
     opacity: .5;
+    padding: 5px;
+    margin: auto;
 }
