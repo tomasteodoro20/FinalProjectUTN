@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from "./components/NavBar"
+import NavBar from './components/navbar/NavBar';
+// import ControlledCarousel from './components/carousel/Controlled-Carousel';
 
 function App() {
   return (

@@ -58,7 +58,7 @@ function NavBar() {
             <Button variant="outline-dark"><img height="20" src="icon-lupa.png" alt="buscar"/></Button>
         </Form>
         {/* <Button variant="link"> */}
-        <DropdownButton variant="dark" align={{ lg: 'end' }} id="dropdown-basic" title="Perfil">
+        <DropdownButton variant="btn-primary" align={{ lg: 'end' }} id="dropdown-basic" title="Perfil">
         {/* <img height="20" src="icon-account.png" alt="Perfil"/> */}
             <Dropdown.Item eventKey="1">Mi perfil</Dropdown.Item>
             <Dropdown.Item eventKey="2">Lista de deseados</Dropdown.Item>
