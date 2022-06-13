@@ -1,5 +1,6 @@
-import {React, useState, render} from "react";
+import {React, useState} from "react";
 import {Carousel} from "react-bootstrap";
+// import PlayerControlExample from "../video-player/VideoPlayer";
 import "./carousel.css";
 
 function ControlledCarousel() {
@@ -13,10 +14,10 @@ function ControlledCarousel() {
     <div className="carousel">
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img
+      <img
           className="d-block"
           src="img-test1.jpg"
-          alt="First slide"
+          alt="Third slide"
         />
         <Carousel.Caption>
           <h3>Primer Trailer</h3>
@@ -24,12 +25,11 @@ function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+      <img
           className="d-block"
           src="img-test2.jpg"
-          alt="Second slide"
+          alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Segundo Trailer</h3>
           <link src=""></link>
