@@ -1,17 +1,23 @@
-import {React, Headers} from "react";
-import { Navbar } from "react-bootstrap";
-import "../../components/carousel/Controlled-Carousel"
+import {React, Headers, Footer, Body} from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import "../../components/carousel/Controlled-Carousel";
 import ControlledCarousel from "../../components/carousel/Controlled-Carousel";
-import "../../components/navbar/NavBar"
-import "./home.css"
+import "../../components/navbar/NavBar";
+import "../../components/nav/Nav";
+import "./home.css";
 
 function Home() {
     return (
     <>
     <Headers>
-    <Navbar/>
+        <Navbar/>
     </Headers>
-    <ControlledCarousel/>
+    <Body>
+        <ControlledCarousel/>
+    </Body>
+    <Footer>
+        <Nav/>             
+    </Footer>
     </>
     )
 }
