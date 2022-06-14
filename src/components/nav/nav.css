@@ -1,6 +1,15 @@
-.bg-color{
+.footer-container{
     background-color: #330D71;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 1em 2em;
 }
+
 .text-color{
     color: #f7f7f7
+}
+
+.redes-sociales img{
+    margin:3px
 }
