@@ -1,0 +1,62 @@
+.container-gamecards{
+    display: flex;
+    flex-wrap: wrap;
+    color:white;
+    gap:2em;
+    justify-content: space-around;
+    margin: 3em;
+}
+
+.gamecard{    
+    background-color: #330D71;
+    width: 230px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.gamecard h3 {
+    font-size: 1em;
+}
+
+.container-gamecards img{
+    max-width: 100%;    
+    height: 70%;
+    object-fit: cover;
+}
+
+.game-info{
+    display: flex;
+    padding: 1em;
+    align-items: center;
+}
+
+.game-overview{
+    background-color: white;
+    text-align: right;
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding: 1em;
+    color:black;
+    box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+    transform: translateY(101%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.game-overview p {
+    font-size: 0.8rem;
+}
+
+.gamecard:hover .game-overview {
+    transform: translateY(0%);
+}
+
+.title{
+    color:white;
+    text-align: center;
+    padding: 1em;
+}

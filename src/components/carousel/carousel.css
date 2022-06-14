@@ -4,8 +4,6 @@
 }
 
 .carousel{
-    background-color: black;
-    opacity: .5;
-    padding: 5px;
-    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);    
+    padding: 1em;
 }
