@@ -6,8 +6,8 @@ import './nav.css'
 function NavFooter() {
   return (
   <>
-  <Nav className="justify-content-end bg-color" activeKey="/home">  
-  <p className='text-color'>2022 - ©Chomyszyn/Vila - Powered by RAWG.io</p>
+  <Nav className="justify-content-end bg-color" activeKey="/home">
+  <p className='text-color mt-2'>2022 - ©Chomyszyn/Vila - Powered by RAWG.io</p> 
     <Nav.Item>
       <Nav.Link href="/home"><img height="20" src='icons-facebook.png' alt="facebook" /></Nav.Link>
     </Nav.Item>
