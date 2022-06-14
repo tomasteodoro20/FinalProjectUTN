@@ -156,14 +156,14 @@ export default class PlayerControlExample extends Component {
           </Button>
         </div>
         <div className="pb-3">
-          <Button onClick={this.changeSource('sintelTrailer')} className="mr-3">
-            Sintel teaser
+          <Button onClick={this.changeSource('TLOUTrailer')} className="mr-3">
+            The Last of Us
           </Button>
-          <Button onClick={this.changeSource('bunnyTrailer')} className="mr-3">
-            Bunny trailer
+          <Button onClick={this.changeSource('SWJFOTrailer')} className="mr-3">
+            Star Wars Jedi Fallen Order
           </Button>
-          <Button onClick={this.changeSource('bunnyMovie')} className="mr-3">
-            Bunny movie
+          <Button onClick={this.changeSource('GOTMovie')} className="mr-3">
+            Ghost of Tsushima
           </Button>
           <Button onClick={this.changeSource('test')} className="mr-3">
             Test movie

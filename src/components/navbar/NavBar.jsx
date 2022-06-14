@@ -10,10 +10,7 @@ function NavBar() {
         <Navbar.Brand href="/">GameOn</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-        <Nav
-            className="me-auto my-2 my-lg-0"
-            navbarScroll
-        >
+        <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
                 <NavDropdown.Item href="#action4">Acción</NavDropdown.Item>
                 <NavDropdown.Divider />   
