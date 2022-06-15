@@ -1,5 +1,5 @@
-import {React, useState} from "react";
-import {Carousel, Card} from "react-bootstrap";
+import {React} from "react";
+import {Carousel, Card, Col} from "react-bootstrap";
 // import PlayerControlExample from "../video-player/VideoPlayer";
 import "./carousel.css";
 import ReactPlayer from "react-player";
@@ -29,12 +29,6 @@ const videoProperties = [
 ]
 
 function ControlledCarousel() {
-  // const [index, setIndex] = useState(0);
-
-  // const handleSelect = (selectedIndex, e) => {
-  //   setIndex(selectedIndex);
-  // };
-
   return (
     <div className="carousel">
     <Carousel>
@@ -48,62 +42,25 @@ function ControlledCarousel() {
                 controls={true}
                 playing={false}
               />
-            
-              <Card style={{ width: '16rem' }} className="card-carousel">
-              <Card.Body>
-                <Card.Title>{videoObj.title}</Card.Title>
-                <Card.Text>{videoObj.description}
-                </Card.Text>
-                <Card.Link href={videoObj.game_details}>Más información</Card.Link>
-              </Card.Body>
-              </Card>
-
+              <Col lg={3} md={11}>              
+                <Card className="card-carousel">
+                <Card.Body>                
+                  <Card.Title as="h4">{videoObj.title}</Card.Title>
+                  <Card.Text>{videoObj.description}
+                  </Card.Text>
+                  <Card.Link href={videoObj.game_details}>Más información</Card.Link>
+                </Card.Body>
+                </Card>
+              </Col>
 
             </div>
             </Carousel.Item>
           );
         })}
-      </Carousel>
-    {/* <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-      <img
-          className="d-block"
-          src="img-test1.jpg"
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Primer Trailer</h3>
-          <link src=""></link>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img
-          className="d-block"
-          src="img-test2.jpg"
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Segundo Trailer</h3>
-          <link src=""></link>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block"
-          src="img-test3.jpg"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Tercer Trailer</h3>
-          <link src=""></link>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel> */}
+      </Carousel>  
     </div>
   );
 }
 
-// render(<ControlledCarousel />);
 
 export default ControlledCarousel;
