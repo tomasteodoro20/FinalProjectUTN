@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import ControlledCarousel from "../../components/carousel/Controlled-Carousel";
 import NavBar from "../../components/navbar/NavBar";
-import NavFooter from '../../components/nav/Nav';
+import NavFooter from '../../components/nav/NavFooter';
 import Recommendations from "../../components/cards/Recommendations";
 import "./home.css";
 
