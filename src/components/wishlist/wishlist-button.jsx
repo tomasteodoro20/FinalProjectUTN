@@ -5,7 +5,8 @@ import './wishlist-button.css'
 function WishlistBtn () {
     return (
 <>
-    <Button variant="secondary">Lista de Deseados</Button>{' '}
+    <Button className='custom-btn'>Lista de Deseados ❤</Button>
+    
 </>
  )
 }
