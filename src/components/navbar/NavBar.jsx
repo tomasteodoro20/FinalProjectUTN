@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button, DropdownButton, Dropdown } from 'react-bootstrap';
-import "./styles.css";
+import "./navbar.styles.css";
+import SearchBar from "./SearchBar/SearchBar";
 
 function NavBar() {
     return (    
@@ -45,7 +46,7 @@ function NavBar() {
                 <NavDropdown.Item href="#action4">IOS</NavDropdown.Item>                
             </NavDropdown>
         </Nav>
-        <Form className="d-flex">
+        {/* <Form className="d-flex">
             <FormControl
             type="search"
             placeholder="Search"
@@ -53,7 +54,8 @@ function NavBar() {
             aria-label="Search"
             />
             <Button variant="outline-dark"><img height="20" src="icon-lupa.png" alt="buscar"/></Button>
-        </Form>
+        </Form> */}
+        <SearchBar />
         <Button variant="link">
         {/* <img height="20" src="icon-account.png" alt="Perfil" className="perfil-img" /> */}
         <DropdownButton variant="btn-primary" align={{ lg: 'end' }} id="dropdown-basic" className="profile-button dropdown-toggle">
