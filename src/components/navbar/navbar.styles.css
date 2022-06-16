@@ -12,6 +12,5 @@
 } */
 
 .profile-button {        
-    height: 20px;
-    content: url("./icon-account.png")!important;
+    height: 25px;
 }
