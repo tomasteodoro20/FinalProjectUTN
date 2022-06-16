@@ -1,0 +1,18 @@
+.delete-profile-btn{
+    background: #330D71 !important;
+    color: #fff;
+    border: 2px solid #330D71 !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.title-color{
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.text-color{
+    color: #46469B;
+}
