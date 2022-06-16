@@ -4,7 +4,7 @@ import {
   SearchInput,
   IconRightArrow,
   IconMagnifyingGlass
-} from "./searchbar.styles.js";
+} from "./searchbar.styles";
 
 function SearchBar() {
   const targetRef = useRef(null);

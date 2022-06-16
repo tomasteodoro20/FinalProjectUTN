@@ -8,9 +8,9 @@ export const Container = styled.div`
   height: 40px;
   box-sizing: border-box;
   border-radius: 50px;
-  border: 3px solid #393e46;
+  border: 3px solid #330D71;
   padding: 3px;
-  background: #222831;
+  background: #330D71;
   transition: all 0.3s;
 
   display: flex;
