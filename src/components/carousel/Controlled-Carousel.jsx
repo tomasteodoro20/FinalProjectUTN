@@ -1,6 +1,5 @@
 import {React} from "react";
 import {Carousel, Card, Col} from "react-bootstrap";
-// import PlayerControlExample from "../video-player/VideoPlayer";
 import "./carousel.css";
 import ReactPlayer from "react-player";
 
@@ -21,7 +20,7 @@ const videoProperties = [
   },
   {
     id:3,
-    title: "Ghost of Tsushim",
+    title: "Ghost of Tsushima",
     src: 'https://www.youtube.com/watch?v=jPeyWo1fWRw',
     game_details:"",
     description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
@@ -48,7 +47,7 @@ function ControlledCarousel() {
                   <Card.Title as="h4">{videoObj.title}</Card.Title>
                   <Card.Text>{videoObj.description}
                   </Card.Text>
-                  <Card.Link href={videoObj.game_details}>Más información</Card.Link>
+                  <Card.Link className="link-style" href={videoObj.game_details}>Ver más</Card.Link>
                 </Card.Body>
                 </Card>
               </Col>
