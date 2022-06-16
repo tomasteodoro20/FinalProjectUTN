@@ -26,10 +26,13 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   
       <Dropdown.Menu>
         <Dropdown.Item eventKey="1">Mi Perfil</Dropdown.Item>
+        <Dropdown.Divider/>
         <Dropdown.Item eventKey="2">Lista de Deseados</Dropdown.Item>
+        <Dropdown.Divider/>
         <Dropdown.Item eventKey="3" active>
           Eliminar cuenta
         </Dropdown.Item>
+        <Dropdown.Divider/>
         <Dropdown.Item eventKey="1">Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>,
