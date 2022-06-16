@@ -22,3 +22,8 @@
     color: white;
     padding: .5em;
 }
+
+.link-style{
+    text-decoration: none;
+    color: #ffff;
+}
