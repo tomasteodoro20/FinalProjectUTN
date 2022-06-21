@@ -26,16 +26,16 @@ const currentMonth = getCurrentMonth();
 const currentDay = getCurrentDay();
 const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
-const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
+// const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-//Popular games
-const popular_games = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+// //Popular games
+// const popular_games = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
-//Upcoming games
-const upcoming_games = `games?key=${apiKey}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
+// //Upcoming games
+// const upcoming_games = `games?key=${apiKey}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
 
-//Recently released
-const new_games = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
+// //Recently released
+// const new_games = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
 //Searh Games
 const query_games = `games?key=${apiKey}&search=`;
@@ -66,9 +66,9 @@ const game_publishers = `publishers?key=${apiKey}&page_size=50`
 const game_publishers_no_page = `publishers`
 
 //Routes
-export const popularGamesGet = () => `${ base_url }${ popular_games }`;
-export const upcomingGamesGet = () => `${ base_url }${ upcoming_games }`;
-export const newGamesGet = () => `${ base_url }${ new_games }`;
+// export const popularGamesGet = () => `${ base_url }${ popular_games }`;
+// export const upcomingGamesGet = () => `${ base_url }${ upcoming_games }`;
+// export const newGamesGet = () => `${ base_url }${ new_games }`;
 export const searchGameGet = game_name => `${ base_url }${ query_games }${ game_name }&page_size=21`;
 export const gameDetailsGet = game_id => `${ base_url }${ game_details }${ game_id }?key=${ apiKey }`;
 export const gameScreenshotsGet = game_id => `${ base_url }${ game_details }${ game_id }${ game_screenshots }?key=${ apiKey }`;
@@ -82,12 +82,13 @@ export const publishersGet = () => `${ base_url }${ game_publishers }`;
 export const specificPublisherGet = publisher_id => `${ base_url }${ game_publishers_no_page }/${ publisher_id }?key=${ apiKey }`;
 export const samplePublisherGamesGet = publisher_id => `${ base_url }${ publisher_games }${publisher_id}&page_size=21`;
 
-export const fetchActionGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=4`;
-export const fetchRacingGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=1`;
-export const fetchAdventureGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=3`;
-export const fetchShooterGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=2&dates=2016-01-01,2021-09-21`;
-export const fetchStrategyGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=10&dates=2016-01-01,2021-09-21`;
-export const fetchFightingGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=6&dates=2016-01-01,2021-09-21`;
+export const popularGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+export const fetchActionGames = `${base_url}games?key=${apiKey}&genres=4`;
+export const fetchAdventureGames = `h${base_url}games?key=${apiKey}&genres=3`;
+export const fetchRacingGames = `ht${base_url}games?key=${apiKey}&genres=1`;
+export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
+export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
+export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
 
 
 

@@ -18,7 +18,7 @@ function NavBar() {
                 <NavDropdown.Divider />   
                 <NavDropdown.Item href="#action4">Aventura</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">RPG</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Estrategia</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action4">Racing</NavDropdown.Item>
                 <NavDropdown.Divider />

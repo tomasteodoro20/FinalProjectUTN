@@ -6,7 +6,7 @@ import Divider from '../../components/divider/Divider';
 import Recommendations from "../../components/cards/Recommendations";
 import CardsList from "../../components/cards/CardsList";
 import "./home.css";
-import { popularGamesGet, fetchActionGames, fetchStrategyGames } from "../../constants";
+import { popularGames, fetchActionGames, fetchStrategyGames} from "../../constants";
 
 function Home() {
     const [gameList, setGameList] = useState([]);
@@ -20,7 +20,7 @@ function Home() {
     title="Recomendados"
     gameList={gameList} 
     setGameList={setGameList}
-    url={fetchStrategyGames}
+    url={popularGames}
     />
     <NavFooter/>
     </>
