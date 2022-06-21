@@ -82,4 +82,13 @@ export const publishersGet = () => `${ base_url }${ game_publishers }`;
 export const specificPublisherGet = publisher_id => `${ base_url }${ game_publishers_no_page }/${ publisher_id }?key=${ apiKey }`;
 export const samplePublisherGamesGet = publisher_id => `${ base_url }${ publisher_games }${publisher_id}&page_size=21`;
 
+export const fetchActionGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=4`;
+export const fetchRacingGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=1`;
+export const fetchAdventureGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=3`;
+export const fetchShooterGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=2&dates=2016-01-01,2021-09-21`;
+export const fetchStrategyGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=10&dates=2016-01-01,2021-09-21`;
+export const fetchFightingGames = `https://api.rawg.io/api/games?key=${apiKey}&genres=6&dates=2016-01-01,2021-09-21`;
+
+
+
 

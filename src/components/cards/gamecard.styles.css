@@ -29,9 +29,12 @@
 
 .game-info{
     display: flex;
-    padding: 1em;
+    padding: 0.5em;
     align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap;     */
 }
+
 
 .game-overview{
     background-color: white;
@@ -59,4 +62,13 @@
     color:white;
     text-align: center;
     padding: 1em;
+}
+
+.game-console{
+    display: flex; 
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    gap: .5em;
+    align-self: inherit;
+    /* padding: 0.5em; */
 }
