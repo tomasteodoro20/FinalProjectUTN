@@ -4,14 +4,14 @@ import '../navbar.styles.css'
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
-      href="#"
+      href="Profile"
       ref={ref}
       onClick={e => {
         e.preventDefault();
         onClick(e);
       }}
     >
-      {<img className='profile-button' src='./icon-account.png'></img>}
+      {<img className='profile-button' src='./icon-account.png' alt='Perfil'></img>}
       {children}
     </a>
   ));
