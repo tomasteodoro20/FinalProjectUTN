@@ -90,6 +90,10 @@ export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
 export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
 export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
 export const latestGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=4`
-
+export const fetchPCGames = `${base_url}games?key=${apiKey}&platform=1&dates=${lastYear},${currentDate}`;
+export const fetchPS4Games = `${base_url}games?key=${apiKey}&platform=2&dates=${lastYear},${currentDate}`;
+export const fetchXboxGames = `${base_url}games?key=${apiKey}&platform=3&dates=${lastYear},${currentDate}`;
+export const fetchNintendoGames = `${base_url}games?key=${apiKey}&platform=7&dates=${lastYear},${currentDate}`;
+export const fetchPlatformSteam = `${base_url}games?key=${apiKey}&store=1&dates=${lastYear},${currentDate}`
 
 
