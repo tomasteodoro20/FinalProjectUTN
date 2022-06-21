@@ -12,7 +12,7 @@ function MyProfile () {
     <>
     <NavBar/>
     <Container>
-    <h2 className='title-color'>Mi Perfil</h2>
+    <h2 className='title-style'>Mi Perfil</h2>
     <Button className='delete-profile-btn'>Eliminar cuenta</Button>
     <Divider/>
     </Container>
@@ -20,7 +20,7 @@ function MyProfile () {
         <Col>
         <Image src='logo.png' roundedCircle></Image>
         </Col>
-        <Col className='text-color'>
+        <Col className='text-style'>
         <p>Usuario: </p>
         <p>Nombre: </p> 
         <p>Apellido: </p>
