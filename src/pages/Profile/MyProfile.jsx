@@ -1,12 +1,16 @@
-import React from 'react';
+import {React, useState} from 'react';
 import {Button, Image, Container, Col, Row} from 'react-bootstrap';
 import NavBar from '../../components/navbar/NavBar';
 import NavFooter from '../../components/nav/NavFooter';
 import Divider from '../../components/divider/Divider';
 import './profile.css'
 import WishlistButton from '../../components/wishlist/WishlistButton';
+import CardsList from  '../../components/cards/CardsList'
+import { latestGames} from "../../constants";
 
 function MyProfile () {
+
+    const [gameList, setGameList] = useState([]);
 
     return (
     <>
@@ -32,6 +36,17 @@ function MyProfile () {
     </Col>
     </Row>
     <Divider/>
+    <CardsList
+
+    title="Últimas novedades"
+
+    gameList={gameList}
+
+    setGameList={setGameList}
+
+    url={latestGames}
+
+    />
     <NavFooter/>
     </>
     )
