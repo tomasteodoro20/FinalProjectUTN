@@ -48,8 +48,8 @@ function NavBar() {
             </NavDropdown>
         </Nav>
         <SearchBar />
-        </Navbar.Collapse>
         <ProfileMenu/>
+        </Navbar.Collapse>
     </Container>
     </Navbar>
     )

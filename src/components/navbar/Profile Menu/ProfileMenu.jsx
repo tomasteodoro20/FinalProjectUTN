@@ -4,14 +4,14 @@ import '../navbar.styles.css'
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
-      href="#"
+      href="Profile"
       ref={ref}
       onClick={e => {
         e.preventDefault();
         onClick(e);
       }}
     >
-      {<img className='profile-button' src='./icon-account.png'></img>}
+      {<img className='profile-button' src='./icon-account.png' alt="Profile"></img>}
       {children}
     </a>
   ));
@@ -20,7 +20,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 
  return(
     <>
-    <Dropdown>
+    <Dropdown align={{md:"end"}}>
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
       </Dropdown.Toggle>
   
@@ -35,7 +35,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <Dropdown.Divider/>
         <Dropdown.Item eventKey="1">Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
-    </Dropdown>,
+    </Dropdown>
     </>
 );
 }
