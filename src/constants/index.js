@@ -83,17 +83,23 @@ export const specificPublisherGet = publisher_id => `${ base_url }${ game_publis
 export const samplePublisherGamesGet = publisher_id => `${ base_url }${ publisher_games }${publisher_id}&page_size=21`;
 
 export const popularGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=20`
+export const latestGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=4`
+
 export const fetchActionGames = `${base_url}games?key=${apiKey}&genres=4`;
 export const fetchAdventureGames = `${base_url}games?key=${apiKey}&genres=3`;
 export const fetchRacingGames = `ht${base_url}games?key=${apiKey}&genres=1`;
 export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
 export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
 export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
-export const latestGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=4`
+
 export const fetchPCGames = `${base_url}games?key=${apiKey}&platform=1&dates=${lastYear},${currentDate}`;
 export const fetchPS4Games = `${base_url}games?key=${apiKey}&platform=2&dates=${lastYear},${currentDate}`;
 export const fetchXboxGames = `${base_url}games?key=${apiKey}&platform=3&dates=${lastYear},${currentDate}`;
 export const fetchNintendoGames = `${base_url}games?key=${apiKey}&platform=7&dates=${lastYear},${currentDate}`;
+
 export const fetchPlatformSteam = `${base_url}games?key=${apiKey}&store=1&dates=${lastYear},${currentDate}`
+export const fetchPlatformEpicGames = `${base_url}games?key=${apiKey}&store=11&dates=${lastYear},${currentDate}`
+export const fetchPlatformGPlay = `${base_url}games?key=${apiKey}&store=8&dates=${lastYear},${currentDate}`
+export const fetchPlatformIOS = `${base_url}games?key=${apiKey}&store=4&dates=${lastYear},${currentDate}`
 
 
