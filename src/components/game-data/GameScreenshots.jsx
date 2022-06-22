@@ -5,7 +5,7 @@ import './game-data.css';
 const GameScreenshots = (game) => {    
     const [gameScreenshots, setGameScreenshots] = useState([]);
 
-    const url = "https://api.rawg.io/api/games/123/screenshots?key=55381525b8814ed8b7afabaa2999118a";
+    const url = "https://api.rawg.io/api/games/36/screenshots?key=55381525b8814ed8b7afabaa2999118a";
 
     useEffect(() => {
         fetch(url)

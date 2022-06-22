@@ -7,11 +7,12 @@ import { SiNintendoswitch } from "react-icons/si";
 
 
 function GameData () {
-    
     const [gameDetails, setGameDetails] = useState([]);
+    const ratingStyle = `${gameDetails.rating > 3.5 ? "good" : "bad"}-rating`;
+    
     const fetchDetails = async () => {
         const response = await fetch(
-            "https://api.rawg.io/api/games/123?key=55381525b8814ed8b7afabaa2999118a"
+            "https://api.rawg.io/api/games/36?key=55381525b8814ed8b7afabaa2999118a"
             );
             const data = await response.json();
             setGameDetails(data);
@@ -21,7 +22,6 @@ function GameData () {
             fetchDetails();
         }, []);
         
-        const ratingStyle = `${gameDetails.rating > 3.5 ? "good" : "bad"}-rating`;
 
     return (
     <>
