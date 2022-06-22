@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Button} from 'react-bootstrap';
 import "./navbar.styles.css";
 import SearchBar from "./SearchBar/SearchBar";
 import ProfileMenu from "./Profile Menu/ProfileMenu";
@@ -34,17 +34,9 @@ function NavBar() {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action4"><Link className="link-style" to='/Xbox'>Xbox</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Nintendo'>Nintendo</Link></NavDropdown.Item>                
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Nintendo'>Nintendo</Link></NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="PLATAFORMAS" id="navbarScrollingDropdown" className="fontSize">            
-                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Steam'>Steam</Link></NavDropdown.Item>
-                <NavDropdown.Divider />   
-                <NavDropdown.Item href="#action4"><Link className="link-style" to='/EpicGames'>Epic Games</Link></NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Android'>Android</Link></NavDropdown.Item>                
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4"><Link className="link-style" to='/IOS'>IOS</Link></NavDropdown.Item>                
-            </NavDropdown>
+            <Button className="upcoming-btn"><Link className="upcoming-btn-style" to='/Upcoming'>Proximamente</Link></Button>
         </Nav>
         <SearchBar />
         <ProfileMenu/>

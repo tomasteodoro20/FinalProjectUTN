@@ -28,3 +28,14 @@
     text-decoration: none;
     color: #ffff;
 }
+
+.upcoming-btn {
+    background: #330D71 !important;
+    border: 2px solid #330D71 !important;
+    text-transform: uppercase;
+}
+
+.upcoming-btn-style {
+    text-decoration: none;
+    color: rgba(255,255,255,.55); 
+}
