@@ -1,30 +1,26 @@
 import {React, useState} from "react";
-import ControlledCarousel from "../../components/carousel/Controlled-Carousel";
 import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
 import Divider from '../../components/divider/Divider';
 import CardsList from "../../components/cards/CardsList";
-import "./home.css";
-import { popularGames} from "../../constants";
+import { fetchActionGames} from "../../constants";
 
-
-function Home() {
+function Action() {
     const [gameList, setGameList] = useState([]);
 
     return (
     <>
-    <NavBar/>    
-    <ControlledCarousel/>
+    <NavBar/>
     <Divider/>
     <CardsList 
-    title="Recomendados"
+    title="Juegos de acción"
     gameList={gameList} 
     setGameList={setGameList}
-    url={popularGames}
+    url={fetchActionGames}
     />
     <NavFooter/>
     </>
     )
 }
 
-export default Home; 
+export default Action; 

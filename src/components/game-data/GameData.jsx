@@ -27,7 +27,7 @@ function GameData () {
             <p>Fecha de lanzamiento: {gameDetails.released}</p>
             <a href={gameDetails.website}>Sitio oficial</a>
         </div>
-        <div className="game-screenshots">        
+        <div className="game-screenshots">
             <GameScreenshots/>        
         </div>
     </div>
