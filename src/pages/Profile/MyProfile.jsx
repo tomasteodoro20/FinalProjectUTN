@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Button, Image, Container, Col, Row} from 'react-bootstrap';
+import {Button, Image, Col, Row} from 'react-bootstrap';
 import NavBar from '../../components/navbar/NavBar';
 import NavFooter from '../../components/nav/NavFooter';
 import Divider from '../../components/divider/Divider';
@@ -15,11 +15,15 @@ function MyProfile () {
     return (
     <>
     <NavBar/>
-    <Container>
+    <Row className='row-style'>
+    <Col className='justify-content-center'>
     <h2 className='title-style'>Mi Perfil</h2>
+    </Col>
+    <Col>
     <Button className='delete-profile-btn'>Eliminar cuenta</Button>
+    </Col>
+    </Row>
     <Divider/>
-    </Container>
         <Row>
         <Col>
         <Image src='logo.png' roundedCircle></Image>
