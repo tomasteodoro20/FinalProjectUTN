@@ -7,6 +7,7 @@ import Recommendations from "../../components/cards/Recommendations";
 import CardsList from "../../components/cards/CardsList";
 import "./home.css";
 import { popularGames, fetchActionGames, fetchStrategyGames} from "../../constants";
+import GameData from "../../components/game-data/GameData"
 
 function Home() {
     const [gameList, setGameList] = useState([]);
@@ -14,14 +15,15 @@ function Home() {
     return (
     <>
     <NavBar/>
-    <ControlledCarousel/>
+    <GameData />
+    {/* <ControlledCarousel/>
     <Divider/>
     <CardsList 
     title="Recomendados"
     gameList={gameList} 
     setGameList={setGameList}
     url={popularGames}
-    />
+    /> */}
     <NavFooter/>
     </>
     )
