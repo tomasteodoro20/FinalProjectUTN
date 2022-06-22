@@ -2,7 +2,7 @@
 const base_url = "https://api.rawg.io/api/";
 
 //API key
-const apiKey = process.env.REACT_APP_APIKEY
+export const apiKey = process.env.REACT_APP_APIKEY
 
 //Getting the date to get the popular, upcoming and recent games
 const getCurrentMonth = function () {

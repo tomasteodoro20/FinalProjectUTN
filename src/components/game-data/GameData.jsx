@@ -4,16 +4,17 @@ import GameScreenshots from "./GameScreenshots";
 import Divider from "../divider/Divider";
 import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
+import {apiKey} from "../../constants/index"
 
 
-function GameData () {
-    const [gameDetails, setGameDetails] = useState([]);
+function GameData ({slug}) {
+    const [gameDetails, setGameDetails] = useState("");
     const ratingStyle = `${gameDetails.rating > 3.5 ? "good" : "bad"}-rating`;
+    const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`;
+
     
     const fetchDetails = async () => {
-        const response = await fetch(
-            "https://api.rawg.io/api/games/36?key=55381525b8814ed8b7afabaa2999118a"
-            );
+        const response = await fetch(url);
             const data = await response.json();
             setGameDetails(data);
         };
@@ -43,10 +44,10 @@ function GameData () {
                 <SiNintendoswitch />
             </div>
             <p>Disponible en las siguientes plataformas: </p>
-            <p className="website-button"><a href={gameDetails.website}>Sitio oficial</a></p>
+            {gameDetails.website && <p className="website-button"><a href={gameDetails.website}>Sitio oficial</a></p>}
         </div>
         <div className="game-screenshots">
-            <GameScreenshots/>        
+            <GameScreenshots slug={gameDetails.slug}/>        
         </div>
     </div>
     </>
