@@ -84,8 +84,8 @@ export const samplePublisherGamesGet = publisher_id => `${ base_url }${ publishe
 
 export const popularGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
 export const fetchActionGames = `${base_url}games?key=${apiKey}&genres=4`;
-export const fetchAdventureGames = `h${base_url}games?key=${apiKey}&genres=3`;
-export const fetchRacingGames = `ht${base_url}games?key=${apiKey}&genres=1`;
+export const fetchAdventureGames = `${base_url}games?key=${apiKey}&genres=3`;
+export const fetchRacingGames = `${base_url}games?key=${apiKey}&genres=1`;
 export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
 export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
 export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
