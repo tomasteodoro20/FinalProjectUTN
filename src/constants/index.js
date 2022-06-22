@@ -82,7 +82,7 @@ export const publishersGet = () => `${ base_url }${ game_publishers }`;
 export const specificPublisherGet = publisher_id => `${ base_url }${ game_publishers_no_page }/${ publisher_id }?key=${ apiKey }`;
 export const samplePublisherGamesGet = publisher_id => `${ base_url }${ publisher_games }${publisher_id}&page_size=21`;
 
-export const popularGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+export const popularGames = `${base_url}games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=20`
 export const fetchActionGames = `${base_url}games?key=${apiKey}&genres=4`;
 export const fetchAdventureGames = `${base_url}games?key=${apiKey}&genres=3`;
 export const fetchRacingGames = `${base_url}games?key=${apiKey}&genres=1`;

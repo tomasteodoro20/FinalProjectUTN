@@ -4,7 +4,8 @@ import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
 
 const GameCard = (game) => {
-    const ratingStyle = `${game.rating > 3.5 ? "good" : "bad"}-rating`
+    const ratingStyle = `${game.rating > 3.5 ? "good" : "bad"}-rating`;
+    
     return (
         <div className="gamecard">
             <img src={game.background_image} alt={game.name}/>
