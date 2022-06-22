@@ -26,7 +26,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
       </Dropdown.Toggle>
   
       <Dropdown.Menu>
-        <Dropdown.Item eventKey="1"><Link to="/MyProfile">Mi Perfil</Link></Dropdown.Item>
+        <Dropdown.Item eventKey="1" className='profile-color'><Link className='link-style' to="/MyProfile">Mi Perfil</Link></Dropdown.Item>
         <Dropdown.Divider/>
         <Dropdown.Item eventKey="2">Lista de Deseados</Dropdown.Item>
         <Dropdown.Divider/>

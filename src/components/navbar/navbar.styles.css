@@ -14,3 +14,17 @@
 .profile-button {        
     height: 25px;
 }
+
+.link-style {
+    text-decoration: none;
+    color: #212529 !important;
+}
+
+.profile-style {
+    text-decoration: none;
+}
+
+.logo-style {
+    text-decoration: none;
+    color: #ffff;
+}
