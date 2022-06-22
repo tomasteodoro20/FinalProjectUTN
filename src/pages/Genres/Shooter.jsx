@@ -1,24 +1,26 @@
 import {React, useState} from "react";
 import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
+import Divider from '../../components/divider/Divider';
 import CardsList from "../../components/cards/CardsList";
-import { fetchAdventureGames} from "../../constants";
+import { fetchShooterGames} from "../../constants";
 
-function Adventure() {
+function Shooter() {
     const [gameList, setGameList] = useState([]);
 
     return (
     <>
     <NavBar/>
+    <Divider/>
     <CardsList 
-    title="Juegos de aventura"
+    title="Juegos shooter"
     gameList={gameList} 
     setGameList={setGameList}
-    url={fetchAdventureGames}
+    url={fetchShooterGames}
     />
     <NavFooter/>
     </>
     )
 }
 
-export default Adventure; 
+export default Shooter; 

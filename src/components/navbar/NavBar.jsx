@@ -15,37 +15,35 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll">
         <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
-                <NavDropdown.Item href="#action4">Acción</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Action'>Acción</Link></NavDropdown.Item>
                 <NavDropdown.Divider />   
-                <NavDropdown.Item href="#action4">Aventura</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Adventure'>Aventura</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Estrategia</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Strategy'>Estrategia</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Racing</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Racing'>Carrera</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Shooter</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Shooter'>Shooter</Link></NavDropdown.Item>
                 <NavDropdown.Divider />         
-                <NavDropdown.Item href="#action4">Simulación</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Simulation'>Simulación</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="CONSOLAS" id="navbarScrollingDropdown" className="fontSize">            
-                <NavDropdown.Item href="#action4">PC</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/PC'>PC</Link></NavDropdown.Item>
                 <NavDropdown.Divider />   
-                <NavDropdown.Item href="#action4">PlayStation</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/PlayStation'>PlayStation</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Xbox</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Xbox'>Xbox</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Nintendo</NavDropdown.Item>                
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Nintendo'>Nintendo</Link></NavDropdown.Item>                
             </NavDropdown>
-            <NavDropdown title="PLATAFORMA" id="navbarScrollingDropdown" className="fontSize">            
-                <NavDropdown.Item href="#action4">Steam</NavDropdown.Item>
+            <NavDropdown title="PLATAFORMAS" id="navbarScrollingDropdown" className="fontSize">            
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Steam'>Steam</Link></NavDropdown.Item>
                 <NavDropdown.Divider />   
-                <NavDropdown.Item href="#action4">Epic Games</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/EpicGames'>Epic Games</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Origin</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/Android'>Android</Link></NavDropdown.Item>                
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Android</NavDropdown.Item>                
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">IOS</NavDropdown.Item>                
+                <NavDropdown.Item href="#action4"><Link className="link-style" to='/IOS'>IOS</Link></NavDropdown.Item>                
             </NavDropdown>
         </Nav>
         <SearchBar />
