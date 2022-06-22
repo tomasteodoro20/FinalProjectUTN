@@ -3,13 +3,14 @@ import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import "./navbar.styles.css";
 import SearchBar from "./SearchBar/SearchBar";
 import ProfileMenu from "./Profile Menu/ProfileMenu";
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (    
     <Navbar collapseOnSelect expand="md" variant="dark" className="bg-color">
     <Container fluid>
         <img height="60" src="logo.png" alt="logo GameOn"/>
-        <Navbar.Brand href="/">GameOn</Navbar.Brand>
+        <Navbar.Brand><Link className="logo-style" to='/Home'>GameOn</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
         <Nav className="me-auto my-2 my-lg-0" navbarScroll>
