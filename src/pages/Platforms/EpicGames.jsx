@@ -2,23 +2,23 @@ import {React, useState} from "react";
 import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
 import CardsList from "../../components/cards/CardsList";
-import { fetchRacingGames} from "../../constants";
+import { fetchPlatformEpicGames } from "../../constants";
 
-function Racing() {
+function EpicGames() {
     const [gameList, setGameList] = useState([]);
 
     return (
     <>
     <NavBar/>
     <CardsList 
-    title="Juegos de carreras"
+    title="Juegos en Epic Games"
     gameList={gameList} 
     setGameList={setGameList}
-    url={fetchRacingGames}
+    url={fetchPlatformEpicGames}
     />
     <NavFooter/>
     </>
     )
 }
 
-export default Racing; 
+export default EpicGames; 

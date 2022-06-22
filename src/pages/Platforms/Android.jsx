@@ -2,23 +2,23 @@ import {React, useState} from "react";
 import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
 import CardsList from "../../components/cards/CardsList";
-import { fetchRacingGames} from "../../constants";
+import { fetchPlatformGPlay } from "../../constants";
 
-function Racing() {
+function Android() {
     const [gameList, setGameList] = useState([]);
 
     return (
     <>
     <NavBar/>
     <CardsList 
-    title="Juegos de carreras"
+    title="Juegos en Android"
     gameList={gameList} 
     setGameList={setGameList}
-    url={fetchRacingGames}
+    url={fetchPlatformGPlay}
     />
     <NavFooter/>
     </>
     )
 }
 
-export default Racing; 
+export default Android; 

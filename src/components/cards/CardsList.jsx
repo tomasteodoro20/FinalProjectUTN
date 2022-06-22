@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import GameCard from "./GameCard";
 import "./gamecard.styles.css";
-
-
+import Divider from "../divider/Divider";
+    
 const CardsList = ({title, url, gameList, setGameList}) => {    
     useEffect(() => {
         fetch(url)
@@ -12,6 +12,7 @@ const CardsList = ({title, url, gameList, setGameList}) => {
     return (
         <>
             <h2 className="title">{title}</h2>
+            <Divider/>
             <div className="container-gamecards">
                 {gameList.map((game) => (
                     <GameCard 
