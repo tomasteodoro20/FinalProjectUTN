@@ -22,7 +22,7 @@ import EpicGames from './pages/Platforms/EpicGames';
 import Android from './pages/Platforms/Android';
 import IOS from './pages/Platforms/IOS';
 import Game from './pages/Game/Game';
-
+import Upcoming from './pages/Upcoming/Upcoming'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -47,6 +47,7 @@ root.render(
         <Route path='/EpicGames' element={<EpicGames/>}></Route>
         <Route path='/Android' element={<Android/>}></Route>
         <Route path='/IOS' element={<IOS/>}></Route>
+        <Route path='/Upcoming' element={<Upcoming/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
