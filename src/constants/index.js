@@ -88,7 +88,7 @@ export const upcomingGames = `${base_url}games?key=${apiKey}&dates=${currentDate
 
 export const fetchActionGames = `${base_url}games?key=${apiKey}&genres=4`;
 export const fetchAdventureGames = `${base_url}games?key=${apiKey}&genres=3`;
-export const fetchRacingGames = `ht${base_url}games?key=${apiKey}&genres=1`;
+export const fetchRacingGames = `${base_url}games?key=${apiKey}&genres=1`;
 export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
 export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
 export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
