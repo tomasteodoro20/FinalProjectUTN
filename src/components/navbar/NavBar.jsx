@@ -15,17 +15,17 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll">
         <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
-                <NavDropdown.Item href="#action4">Acción</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Action'>Acción</Link></NavDropdown.Item>
                 <NavDropdown.Divider />   
-                <NavDropdown.Item href="#action4">Aventura</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Adventure'>Aventura</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Estrategia</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Strategy'>Estrategia</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Racing</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Racing'>Carrera</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Shooter</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Shooter'>Shooter</Link></NavDropdown.Item>
                 <NavDropdown.Divider />         
-                <NavDropdown.Item href="#action4">Simulación</NavDropdown.Item>
+                <NavDropdown.Item href="#action4"><Link to='/Simulation'>Simulación</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="CONSOLAS" id="navbarScrollingDropdown" className="fontSize">            
                 <NavDropdown.Item href="#action4">PC</NavDropdown.Item>
