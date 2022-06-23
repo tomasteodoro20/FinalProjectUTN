@@ -3,11 +3,11 @@ import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
 import GameData from '../../components/game-data/GameData';
 
-function Game () {
+function Game ({slug}) {
     return (
         <>
         <NavBar/>
-        <GameData />
+        <GameData slug={slug}/>
         <NavFooter/>
         </>
     )

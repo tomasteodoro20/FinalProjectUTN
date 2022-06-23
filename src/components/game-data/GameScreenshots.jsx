@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from "react";
 import './game-data.css';
+import {apiKey} from "../../constants/index"
 
+const GameScreenshots = ({slug}) => {    
+    const url = `https://api.rawg.io/api/games/${slug}/screenshots?key=${apiKey}`;    
 
-const GameScreenshots = (game) => {    
     const [gameScreenshots, setGameScreenshots] = useState([]);
-
-    const url = "https://api.rawg.io/api/games/36/screenshots?key=55381525b8814ed8b7afabaa2999118a";
 
     useEffect(() => {
         fetch(url)
         .then((res) => res.json())
         .then((data) => setGameScreenshots(data.results));
-    },[]);
+    },[setGameScreenshots]);
 
     return (
         <>            

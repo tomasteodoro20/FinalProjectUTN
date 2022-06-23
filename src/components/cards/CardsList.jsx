@@ -16,6 +16,7 @@ const CardsList = ({title, url, gameList, setGameList}) => {
             <div className="container-gamecards">
                 {gameList.map((game) => (
                     <GameCard 
+                        slug={game.slug}
                         key={game.id} 
                         name={game.name}
                         released={game.released}
