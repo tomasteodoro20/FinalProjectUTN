@@ -93,14 +93,13 @@ export const fetchShooterGames = `${base_url}games?key=${apiKey}&genres=2`;
 export const fetchStrategyGames = `${base_url}games?key=${apiKey}&genres=10`;
 export const fetchSimulationGames = `${base_url}games?key=${apiKey}&genres=14`;
 
-export const fetchPCGames = `${base_url}games?key=${apiKey}&platform=1&dates=${lastYear},${currentDate}`;
-export const fetchPS4Games = `${base_url}games?key=${apiKey}&platform=2&dates=${lastYear},${currentDate}`;
-export const fetchXboxGames = `${base_url}games?key=${apiKey}&platform=3&dates=${lastYear},${currentDate}`;
-export const fetchNintendoGames = `${base_url}games?key=${apiKey}&platform=7&dates=${lastYear},${currentDate}`;
+export const fetchPCGames = `${base_url}games?key=${apiKey}&platforms=4&dates=${lastYear},${currentDate}&page_size=20`;
+export const fetchPS4Games = `${base_url}games?key=${apiKey}&platforms=18&dates=${lastYear},${currentDate}&page_size=20`;
+export const fetchXboxGames = `${base_url}games?key=${apiKey}&platforms=1&dates=${lastYear},${currentDate}&page_size=20`;
+export const fetchNintendoGames = `${base_url}games?key=${apiKey}&platforms=7&dates=${lastYear},${currentDate}&page_size=20`;
 
 export const fetchPlatformSteam = `${base_url}games?key=${apiKey}&store=1&dates=${lastYear},${currentDate}`
 export const fetchPlatformEpicGames = `${base_url}games?key=${apiKey}&store=11&dates=${lastYear},${currentDate}`
 export const fetchPlatformGPlay = `${base_url}games?key=${apiKey}&store=8&dates=${lastYear},${currentDate}`
 export const fetchPlatformIOS = `${base_url}games?key=${apiKey}&store=4&dates=${lastYear},${currentDate}`
-
 
