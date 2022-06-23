@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 ;import './wishlist-button.css'
 
@@ -8,8 +7,11 @@ function WishlistBtn () {
     
     return (
 <>
-    <Button className='custom-btn' onClick={<Link to='/Wishlist'></Link>}>Lista de Deseados ❤</Button>
-    
+    <Link to="/Wishlist">
+        <button className='custom-btn' type="button">
+            Lista de deseados ❤
+        </button>
+    </Link> 
 </>
  )
 }
