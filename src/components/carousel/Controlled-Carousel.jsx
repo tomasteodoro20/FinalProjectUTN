@@ -1,5 +1,6 @@
 import {React} from "react";
 import {Carousel, Card, Col} from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import "./carousel.css";
 import ReactPlayer from "react-player";
 
@@ -29,6 +30,7 @@ const videoProperties = [
 
 function ControlledCarousel() {
   return (
+    <>
     <div className="carousel">
     <Carousel>
         {videoProperties.map((videoObj) => {
@@ -47,7 +49,7 @@ function ControlledCarousel() {
                   <Card.Title as="h4">{videoObj.title}</Card.Title>
                   <Card.Text>{videoObj.description}
                   </Card.Text>
-                  <Card.Link className="link-style" href={videoObj.game_details}>Ver más</Card.Link>
+                  <Link to='/:slug'><Card.Link className="link-style">Ver más</Card.Link></Link>
                 </Card.Body>
                 </Card>
               </Col>
@@ -58,6 +60,7 @@ function ControlledCarousel() {
         })}
       </Carousel>  
     </div>
+  </>
   );
 }
 

@@ -30,7 +30,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <Dropdown.Divider/>
         <Dropdown.Item eventKey="2"><Link className='link-style' to='/Wishlist'>Lista de Deseados</Link></Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item eventKey="3" active>
+        <Dropdown.Item eventKey="3">
           Eliminar cuenta
         </Dropdown.Item>
         <Dropdown.Divider/>

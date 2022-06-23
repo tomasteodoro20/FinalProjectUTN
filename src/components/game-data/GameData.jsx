@@ -54,31 +54,4 @@ function GameData ({slug}) {
     );
   }
 
-// {
-//     const [gameList, setGameList] = useState("");
-
-//     const url = "https://api.rawg.io/api/games/543?key=55381525b8814ed8b7afabaa2999118a";
-//     useEffect(() => {
-//         fetch(url)
-//         .then((res) => res.json())
-//         .then((data) => setGameList(data.results));
-//     },[]);
-//     return (
-//         <>
-//         <div className="row-style">
-//             <h2>{game.name}</h2>
-//             <p>Rating: {game.rating}</p>
-//             <p>{game.description}</p>
-//             <img src="" alt="Game platforms" />
-//         </div>
-//         <div className="row-style">
-//             <p>{game.details}</p>
-//             <Container>                
-//                 <GameScreenshots/>                
-//             </Container>
-//         </div>
-//         </>
-//     )
-// }
-
 export default GameData;
