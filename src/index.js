@@ -23,6 +23,7 @@ import Android from './pages/Platforms/Android';
 import IOS from './pages/Platforms/IOS';
 import Game from './pages/Game/Game';
 import Upcoming from './pages/Upcoming/Upcoming'
+import Wishlist from './pages/Wishlist/Wishlist';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -48,6 +49,7 @@ root.render(
         <Route path='/Android' element={<Android/>}></Route>
         <Route path='/IOS' element={<IOS/>}></Route>
         <Route path='/Upcoming' element={<Upcoming/>}></Route>
+        <Route path='/Wishlist' element={<Wishlist/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
