@@ -34,7 +34,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
           Eliminar cuenta
         </Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item eventKey="1">Cerrar sesión</Dropdown.Item>
+        <Dropdown.Item eventKey="4">Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
     </>
