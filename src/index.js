@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import "./styles.css"
-import reportWebVitals from './reportWebVitals';
+import "./styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MyProfile from './pages/Profile/MyProfile';
@@ -17,10 +16,6 @@ import PC from './pages/Consoles/PC';
 import PlayStation from './pages/Consoles/PlayStation';
 import XBOX from './pages/Consoles/XBOX';
 import Nintendo from './pages/Consoles/Nintendo';
-import Steam from './pages/Platforms/Steam';
-import EpicGames from './pages/Platforms/EpicGames';
-import Android from './pages/Platforms/Android';
-import IOS from './pages/Platforms/IOS';
 import Game from './pages/Game/Game';
 import Upcoming from './pages/Upcoming/Upcoming'
 import Wishlist from './pages/Wishlist/Wishlist';
@@ -38,22 +33,16 @@ root.render(
         <Route path='/Racing' element={<Racing/>}></Route>
         <Route path='/Shooter' element={<Shooter/>}></Route>
         <Route path='/Simulation' element={<Simulation/>}></Route>
-        <Route path='/:slug' element={<Game slug="the-witcher-3-wild-hunt"/>}></Route> {/*¿Como hacer que traiga el juego seleccionado?*/}
+        <Route path=':slug' element={<Game />}></Route> {/*¿Como hacer que traiga el juego seleccionado?*/}
         {/* <Route path='/Game/:slug' element={<Game slug="the-witcher-3-wild-hunt"/>}></Route> */}
         <Route path='/MyProfile' element={<MyProfile/>}></Route>
         <Route path='/PC' element={<PC/>}></Route>
         <Route path='/PlayStation' element={<PlayStation/>}></Route>
         <Route path='/Xbox' element={<XBOX/>}></Route>
         <Route path='/Nintendo' element={<Nintendo/>}></Route>
-        <Route path='/Steam' element={<Steam/>}></Route>
-        <Route path='/EpicGames' element={<EpicGames/>}></Route>
-        <Route path='/Android' element={<Android/>}></Route>
-        <Route path='/IOS' element={<IOS/>}></Route>
         <Route path='/Upcoming' element={<Upcoming/>}></Route>
         <Route path='/Wishlist' element={<Wishlist/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();

@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './game-data.css';
-import {apiKey} from "../../constants/index"
+import {apiKey} from "../../constants/index";
+import {useParams} from "react-router-dom";
 
-const GameScreenshots = ({slug}) => {    
+const GameScreenshots = () => {    
+    const { slug } = useParams();
     const url = `https://api.rawg.io/api/games/${slug}/screenshots?key=${apiKey}`;    
 
     const [gameScreenshots, setGameScreenshots] = useState([]);

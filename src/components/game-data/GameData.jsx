@@ -4,10 +4,12 @@ import GameScreenshots from "./GameScreenshots";
 import Divider from "../divider/Divider";
 import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
-import {apiKey} from "../../constants/index"
+import {apiKey} from "../../constants/index";
+import {useParams} from "react-router-dom";
 
 
-function GameData ({slug}) {
+function GameData () {
+    const { slug } = useParams();
     const [gameDetails, setGameDetails] = useState("");
     const ratingStyle = `${gameDetails.rating > 3.5 ? "good" : "bad"}-rating`;
     const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`;
@@ -47,7 +49,7 @@ function GameData ({slug}) {
             {gameDetails.website && <p className="website-button"><a href={gameDetails.website}>Sitio oficial</a></p>}
         </div>
         <div className="game-screenshots">
-            <GameScreenshots slug={gameDetails.slug}/>        
+            <GameScreenshots/>        
         </div>
     </div>
     </>
