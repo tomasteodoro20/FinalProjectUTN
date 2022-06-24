@@ -1,13 +1,13 @@
-import { ListGroup, Card } from 'react-bootstrap';
+import { ListGroup, Card, Container } from 'react-bootstrap';
 
 function WishlistList () {
 
     return (
-
+        
         <ListGroup as="ul">
         <ListGroup.Item as="li">
-        <Card className="bg-dark text-grey">
-                <Card.Img src="img-test1.jpg" alt="Card image" />
+        <Card>
+                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title>Game</Card.Title>
                     <Card.Text>
@@ -18,8 +18,8 @@ function WishlistList () {
                 </Card>
         </ListGroup.Item>
         <ListGroup.Item as="li">
-        <Card className="bg-dark text-grey">
-                <Card.Img src="img-test1.jpg" alt="Card image" />
+        <Card>
+                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title>Game</Card.Title>
                     <Card.Text>
@@ -30,8 +30,8 @@ function WishlistList () {
                 </Card>
         </ListGroup.Item>
         <ListGroup.Item as="li">
-        <Card className="bg-dark text-grey">
-                <Card.Img src="img-test1.jpg" alt="Card image" />
+        <Card>
+                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title>Game</Card.Title>
                     <Card.Text>
