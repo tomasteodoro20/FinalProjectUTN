@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Searchfilter from './Searchfilter';
+import { searchGames } from "../../constants";
 
 function Searchbar () {
     const [data, setData] = useState([])
@@ -12,7 +13,7 @@ function Searchbar () {
     }
 
     useEffect(() => {
-        fetch("https://api.rawg.io/api/games?key=55381525b8814ed8b7afabaa2999118a&search=")
+        fetch(searchGames)
             .then(res => handleErrors(res))
             .then(data => setData(data))
             .catch(error => console.log(error))
