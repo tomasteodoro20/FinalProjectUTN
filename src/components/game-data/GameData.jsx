@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import GameGenres from "./GameGenres";
 import GameConsoles from "./GameConsoles";
 import GameStores from "./GameStores";
+import WishlistBtnAdd from "../wishlist/WishlistAdd";
 
 
 function GameData () {
@@ -31,7 +32,7 @@ function GameData () {
 
     return (
     <>
-    <div className="game-title">
+    <div className="game-header">
             <h2>{gameDetails.name}</h2>            
             <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
             {gameDetails.website && <a href={gameDetails.website} className="website-button">Sitio oficial</a>}            
@@ -39,21 +40,21 @@ function GameData () {
     <Divider />
     <div className="game-data">
         <div className="game-details">
+            <GameGenres url={url}/>
+            <div className="consoles">            
+            <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>
+            <GameConsoles slug={slug}/>
+            </div>
             <p
                 dangerouslySetInnerHTML={{__html: gameDetails.description}}
             />         
-            <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>
             {/* <h4>Géneros:</h4> */}
-            <GameGenres url={url}/>
             
-            <div className="consoles">
-            <h4>Disponible para:</h4>
-            <GameConsoles slug={slug}/>
-            </div>
+            <GameStores slug={slug}/>
         </div>
         <div className="game-screenshots">
             <GameScreenshots/>        
-            <GameStores slug={slug}/>
+            <WishlistBtnAdd />
         </div>
     </div>
     

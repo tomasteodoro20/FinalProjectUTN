@@ -14,7 +14,7 @@ function GameStores({slug}) {
 
     return (
         <div className="game-stores">
-        <h4>Podés encontrarlo en:</h4>
+        <h4>Compralo en:</h4>
             {gameStores && gameStores.map((game) => {
                 return (
                     <a key={game.store.id} href={`https://${game.store.domain}`} target="_blank" rel="noreferrer"> 
@@ -22,7 +22,7 @@ function GameStores({slug}) {
                         : game.store.id === 2 ? <img src="epic-games-logo.png" alt="Epic games store"/>
                         : game.store.id === 3 ? <img src="playstation-store-logo.png" alt="Playstation store"/>
                         : game.store.id === 11 ? <img src="xbox-store-logo.png" alt="Xbox store"/>
-                        : null}
+                        : <button className="website-button">{game.store.name}</button>}
                     </a>
                 )}
             )}

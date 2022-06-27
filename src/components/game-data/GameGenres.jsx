@@ -11,8 +11,7 @@ function GameGenres({url}) {
     },[setGameGenres]);
 
     return (
-        <div className="gameGenres">            
-        <h4>Género/s:</h4>
+        <div className="gameGenres">      
         {gameGenres.length > 0 ? 
             gameGenres.map((game) => <span key={game.id} className="genre-tag">{game.name}</span>)
             : <span className="genre-tag">No disponible</span>
