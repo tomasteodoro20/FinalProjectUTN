@@ -6,6 +6,7 @@ import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
 import {apiKey} from "../../constants/index";
 import {useParams} from "react-router-dom";
+import WishlistAdd from "../wishlist/WishlistAdd";
 
 
 function GameData () {
@@ -31,6 +32,7 @@ function GameData () {
     <div className="game-title">
             <h2>{gameDetails.name}</h2>            
             <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
+            <WishlistAdd/>
     </div>
     <Divider />
     <div className="game-data">
