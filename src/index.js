@@ -33,8 +33,7 @@ root.render(
         <Route path='/Racing' element={<Racing/>}></Route>
         <Route path='/Shooter' element={<Shooter/>}></Route>
         <Route path='/Simulation' element={<Simulation/>}></Route>
-        <Route path=':slug' element={<Game />}></Route> {/*¿Como hacer que traiga el juego seleccionado?*/}
-        {/* <Route path='/Game/:slug' element={<Game slug="the-witcher-3-wild-hunt"/>}></Route> */}
+        <Route path=':slug' element={<Game />}></Route>
         <Route path='/MyProfile' element={<MyProfile/>}></Route>
         <Route path='/PC' element={<PC/>}></Route>
         <Route path='/PlayStation' element={<PlayStation/>}></Route>

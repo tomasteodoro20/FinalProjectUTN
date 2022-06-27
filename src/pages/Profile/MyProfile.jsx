@@ -19,6 +19,7 @@ function MyProfile () {
     <Col className='justify-content-center'>
     <h2 className='title-style'>Mi Perfil</h2>
     </Col>
+    <Col></Col>
     <Col>
     <Button className='delete-profile-btn'>Eliminar cuenta</Button>
     </Col>

@@ -97,3 +97,5 @@ export const fetchPCGames = `${base_url}games?key=${apiKey}&platforms=4&dates=${
 export const fetchPS4Games = `${base_url}games?key=${apiKey}&platforms=18&dates=${lastYear},${currentDate}&page_size=20`;
 export const fetchXboxGames = `${base_url}games?key=${apiKey}&platforms=1&dates=${lastYear},${currentDate}&page_size=20`;
 export const fetchNintendoGames = `${base_url}games?key=${apiKey}&platforms=7&dates=${lastYear},${currentDate}&page_size=20`;
+
+export const searchGames = `${base_url}games?key=${apiKey}&search=game_name&page_size=21`
