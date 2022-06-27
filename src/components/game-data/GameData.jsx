@@ -7,6 +7,7 @@ import { SiNintendoswitch } from "react-icons/si";
 import {apiKey} from "../../constants/index";
 import {useParams} from "react-router-dom";
 import WishlistAdd from "../wishlist/WishlistAdd";
+import { Row, Col } from "react-bootstrap";
 
 
 function GameData () {
@@ -29,11 +30,18 @@ function GameData () {
 
     return (
     <>
-    <div className="game-title">
-            <h2>{gameDetails.name}</h2>            
-            <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
-            <WishlistAdd/>
-    </div>
+    <Row>
+    <Col>    
+        <div className="game-title">
+                <h2>{gameDetails.name}</h2>            
+                <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
+        </div>
+    </Col>
+    <Col></Col>
+    <Col> 
+        <WishlistAdd/>
+    </Col>       
+    </Row>
     <Divider />
     <div className="game-data">
         <div className="game-details">
