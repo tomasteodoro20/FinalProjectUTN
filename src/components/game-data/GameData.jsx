@@ -2,16 +2,19 @@ import React, {useState, useEffect} from "react";
 import './game-data.css';
 import GameScreenshots from "./GameScreenshots";
 import Divider from "../divider/Divider";
-import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
-import { SiNintendoswitch } from "react-icons/si";
-import {apiKey} from "../../constants/index";
-import {useParams} from "react-router-dom";
+import { apiKey } from "../../constants/index";
+import { useParams } from "react-router-dom";
+import GameGenres from "./GameGenres";
+import GameConsoles from "./GameConsoles";
+import GameStores from "./GameStores";
 
 
 function GameData () {
     const { slug } = useParams();
     const [gameDetails, setGameDetails] = useState("");
-    const ratingStyle = `${gameDetails.rating > 3.5 ? "good" : "bad"}-rating`;
+    const ratingStyle = `${
+        gameDetails.rating > 3.5 ? "good" : gameDetails.rating < 3.5 && gameDetails.rating > 0 ? "bad" : "no"
+    }-rating`;
     const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`;
 
     
@@ -31,6 +34,7 @@ function GameData () {
     <div className="game-title">
             <h2>{gameDetails.name}</h2>            
             <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
+            {gameDetails.website && <a href={gameDetails.website} className="website-button">Sitio oficial</a>}            
     </div>
     <Divider />
     <div className="game-data">
@@ -38,20 +42,21 @@ function GameData () {
             <p
                 dangerouslySetInnerHTML={{__html: gameDetails.description}}
             />         
-            <p>Fecha de lanzamiento: {gameDetails.released}</p>
-            <div className="available-consoles">
-                <FaWindows/>
-                <FaPlaystation/>
-                <FaXbox/>
-                <SiNintendoswitch />
+            <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>
+            {/* <h4>Géneros:</h4> */}
+            <GameGenres url={url}/>
+            
+            <div className="consoles">
+            <h4>Disponible para:</h4>
+            <GameConsoles slug={slug}/>
             </div>
-            <p>Disponible en las siguientes plataformas: </p>
-            {gameDetails.website && <p className="website-button"><a href={gameDetails.website}>Sitio oficial</a></p>}
         </div>
         <div className="game-screenshots">
             <GameScreenshots/>        
+            <GameStores slug={slug}/>
         </div>
     </div>
+    
     </>
     );
   }

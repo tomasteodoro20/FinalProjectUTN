@@ -19,6 +19,14 @@
 }
 
 
+.no-rating{
+    color:white;
+    background-color: rgb(80, 80, 80);
+    border: 3px solid rgb(80, 80, 80);
+    border-radius: 3px;
+}
+
+
 .game-data{
     display: flex;
     flex-wrap: wrap;
@@ -85,22 +93,68 @@
 
 .website-button{
     display: inline-block;
-    padding: .5em;
+    margin:0;
+    padding: .3em;
     border-radius: 5px;
     background-color: #330D71;  
-}
-
-.website-button a{
     color:white;
     text-decoration: none;
 }
 
 .website-button:hover{    
     background-color: #240a4e;
+    color:white;
 }
 
-.available-consoles{
+.release-date{
+    font-weight: bold;
+}
+
+.gameGenres{
     display: flex;
-    justify-content: flex-end;
-    gap: 1em;
+    flex-wrap: wrap;
+    align-items: center;   
+}
+
+.genre-tag{
+    display: inline-block;
+    margin: .4em;
+    margin-left: .7em;
+    padding: .1em;
+    background-color: rgb(80, 80, 80);        
+    border: 2px solid rgb(80, 80, 80);
+    border-radius: 5px;
+}
+
+.game-consoles{
+    display: flex; 
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    gap: .5em;
+    align-self: inherit;
+}
+
+.consoles{
+    display: flex;
+    align-items: center;  
+    font-size: 1.3em;
+    gap: .8em;
+    margin: .4em 0;
+}
+
+.consoles h4 {
+    margin: 0;
+}
+
+.game-stores{
+    color:white;
+    display: flex;
+    align-items: center;      
+    gap: .5em;
+    margin: .4em 0;
+}
+
+.game-stores img{
+    max-width: 50px;
+    max-height: 50px;
 }

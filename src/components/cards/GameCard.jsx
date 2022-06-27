@@ -1,11 +1,12 @@
 import React from "react";
 import "./gamecard.styles.css";
-import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
-import { SiNintendoswitch } from "react-icons/si";
 import { Link } from "react-router-dom";
+import GameConsoles from "../game-data/GameConsoles";
 
 const GameCard = (game) => {
-    const ratingStyle = `${game.rating > 3.5 ? "good" : "bad"}-rating`;
+    const ratingStyle = `${
+        game.rating > 3.5 ? "good" : game.rating < 3.5 && game.rating > 0 ? "bad" : "no"
+    }-rating`;
     
     return (
         <div className="gamecard">            
@@ -13,13 +14,8 @@ const GameCard = (game) => {
                 <img src={game.background_image} alt={game.name}/>                       
             </Link>
             <div className="game-info">
-                <h3 className="game-info">{game.name}</h3>
-            <div className="game-console">
-                <FaWindows/>
-                <FaPlaystation/>
-                <FaXbox/>
-                <SiNintendoswitch />
-            </div>    
+                <h3 className="game-info">{game.name}</h3>            
+            <GameConsoles slug={game.slug}/>
             </div>
             <div className="game-overview">
                 <h3>{game.name}</h3>    
