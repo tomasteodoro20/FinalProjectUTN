@@ -1,7 +1,6 @@
 import React from 'react'
 import {Dropdown} from 'react-bootstrap'
 import '../navbar.styles.css'
-import { Link } from 'react-router-dom'
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
@@ -26,15 +25,13 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
       </Dropdown.Toggle>
   
       <Dropdown.Menu>
-        <Dropdown.Item eventKey="1" className='profile-color' href="/MyProfile"><Link className='link-style' to="/MyProfile">Mi Perfil</Link></Dropdown.Item>
+        <Dropdown.Item className='link-style' href="/MyProfile">Mi Perfil</Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item eventKey="2"><Link className='link-style' to='/Wishlist'>Lista de Deseados</Link></Dropdown.Item>
+        <Dropdown.Item className='link-style' href='/Wishlist'>Lista de Deseados</Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item eventKey="3">
-          Eliminar cuenta
-        </Dropdown.Item>
+        <Dropdown.Item className='link-style' href='/Wishlist'>Eliminar cuenta</Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item eventKey="4">Cerrar sesión</Dropdown.Item>
+        <Dropdown.Item className='link-style' href='/Wishlist'>Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
     </>

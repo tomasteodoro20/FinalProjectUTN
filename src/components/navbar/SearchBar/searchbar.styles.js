@@ -3,7 +3,7 @@ import SearchIcon from "./search";
 import ArrowRightIcon from "./arrowRight";
 
 export const Container = styled.div`
-  position: relative;
+  position: relative;  
   width: 50px;
   height: 40px;
   box-sizing: border-box;
@@ -15,6 +15,7 @@ export const Container = styled.div`
 
   display: flex;
   justify-content: center;
+  align-self:center;
   align-items: center;
   flex-direction: column;
 
@@ -24,17 +25,17 @@ export const Container = styled.div`
       width: 30%;
       -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.74);
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.74);
-      border: 2px solid rgba(0, 0, 0, 0.74);
+      ${'' /* border: 2px solid rgba(0, 0, 0, 0.74); */}
 
       @media (max-width: 768px) {
-        width: 50%;
+        width: 100%;
       }
     `}
 `;
 
 export const SearchInput = styled.input`
-  position: absolute;
-  top: 0;
+  position: absolute;  
+  top: 5;
   left: 0;
   width: 100%;
   height: 40px;

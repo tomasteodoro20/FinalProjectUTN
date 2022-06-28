@@ -17,7 +17,20 @@
 
 .link-style {
     text-decoration: none;
-    color: #212529 !important;
+    color: white !important;
+}
+
+.link-style:hover{
+    background-color: #240a4e !important;
+}
+
+.nav-link{
+    color:white !important;
+}
+
+.dropdown-menu{
+    background-color: #330D71 !important;
+    border: none !important;
 }
 
 .profile-style {
@@ -35,4 +48,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,.55); 
+}
+
+.container-fluid{
+    justify-content: flex-end !important;
+    gap: 1em
 }

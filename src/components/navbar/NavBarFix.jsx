@@ -6,22 +6,23 @@ import ProfileMenu from "./Profile Menu/ProfileMenu";
 
 function NavBarFix() {
   return (
-    <>
-  {['md'].map((expand) => (
-    <Navbar key={expand} expand={expand} variant="dark" className="bg-color">
-      <Container fluid>
-      <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} justify-content-end/>
+    <>  
+    <Navbar expand="md" variant="dark" className="bg-color">
+      <Container fluid>      
+      <Nav className="me-auto">
+      <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>      
+      </Nav>
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
         <Navbar.Offcanvas
-          id={`offcanvasNavbar-expand-${expand}`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-          placement="end"          
+          id={`offcanvasNavbar-expand-md`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+          placement="end"                    
         >
           <Offcanvas.Header closeButton className="bg-color">
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>              
+            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>              
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body variant="dark" className="bg-color">
+          <Offcanvas.Body className="bg-color">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
                 <NavDropdown.Item href="/Action" className="link-style">Acción</NavDropdown.Item>
@@ -53,7 +54,6 @@ function NavBarFix() {
         <ProfileMenu />      
       </Container>
     </Navbar>
-  ))}
 </>
   )
 }
