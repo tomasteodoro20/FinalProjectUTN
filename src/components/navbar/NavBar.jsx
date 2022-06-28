@@ -1,7 +1,8 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import "./navbar.styles.css";
-import SearchBar from "./SearchBar/SearchBar";
+import NuevaSearchBar from "./NuevaSearchBar/NuevaSearchBar";
+// import SearchBar from "./SearchBar/SearchBar";
 import ProfileMenu from "./Profile Menu/ProfileMenu";
 
 function NavBar() {
@@ -36,7 +37,8 @@ function NavBar() {
             </NavDropdown>            
             <Nav.Link className="upcoming-btn" href="/Upcoming">Proximamente</Nav.Link>            
         </Nav>
-        <SearchBar />
+        <NuevaSearchBar />
+        {/* <SearchBar /> */}
         <ProfileMenu/>
         </Navbar.Collapse>
     </Container>
