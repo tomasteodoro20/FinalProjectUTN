@@ -45,14 +45,12 @@ function GameData () {
             <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>
             <GameConsoles slug={slug}/>
             </div>
-            <p
+            <div
                 dangerouslySetInnerHTML={{__html: gameDetails.description}}
-            />         
-            {/* <h4>Géneros:</h4> */}
-            
+            />                     
             <GameStores slug={slug}/>
         </div>
-        <div className="game-screenshots">
+        <div className="game-extra">
             <GameScreenshots/>        
             <WishlistBtnAdd />
         </div>

@@ -16,12 +16,12 @@ const GameScreenshots = () => {
     },[setGameScreenshots]);
 
     return (
-        <>            
+        <div className="game-screenshots">            
             {gameScreenshots.slice(0, 3).map((game) => (
                 <img className="screenshots-img" key={game.id} src={game.image} alt="Screenshot" />
             )
             )}          
-        </>
+        </div>
     )
 }
 

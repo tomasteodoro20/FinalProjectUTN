@@ -1,6 +1,7 @@
 .footer-container{
     background-color: #330D71;    
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 1em 2em;
 }
@@ -13,7 +14,13 @@
     margin:3px
 }
 
-.link-style{
+.copyright{
     text-decoration: none;
     color: #ffff;
+}
+
+@media (max-width: 500px){
+    .footer-container{        
+        justify-content: center;
+    }
 }

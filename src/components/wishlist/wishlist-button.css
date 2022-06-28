@@ -1,6 +1,7 @@
 .custom-btn {
   display: block;
-  width: 480px;
+  max-width: 480px;
+  width: 90vw;
   background: #330D71;
   text-decoration: none;
   color: #fff;
