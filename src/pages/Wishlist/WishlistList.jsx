@@ -1,4 +1,4 @@
-import { ListGroup, Card } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 
 function WishlistList () {
 
