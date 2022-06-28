@@ -1,45 +1,39 @@
-import { ListGroup, Card, Container } from 'react-bootstrap';
+import { ListGroup, Card } from 'react-bootstrap';
 
 function WishlistList () {
 
     return (
         
         <ListGroup as="ul">
-        <ListGroup.Item as="li">
-        <Card>
-                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>Game</Card.Title>
-                    <Card.Text>
-                    Lorem ipsum dolor sit amet consectetur.
-                    </Card.Text>
-                    <Card.Text>Rating</Card.Text>
-                </Card.ImgOverlay>
-                </Card>
+        <ListGroup.Item className='list-style' as="li">
+        <div class="card flex-row card-style">
+            <img class="img-style" src="img-test1.jpg" alt='#'/>
+             <div class="card-body card-text-style">
+                 <h4 class="card-title h5 h4-sm">Left image</h4>
+                 <p class="card-text">Example text</p>
+             </div>
+             <button class="btn btn-black" type="button">Remover</button>
+        </div>
         </ListGroup.Item>
-        <ListGroup.Item as="li">
-        <Card>
-                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>Game</Card.Title>
-                    <Card.Text>
-                    Lorem ipsum dolor sit amet consectetur.
-                    </Card.Text>
-                    <Card.Text>Rating</Card.Text>
-                </Card.ImgOverlay>
-                </Card>
+        <ListGroup.Item className='list-style'  as="li">
+        <div class="card flex-row card-style">
+            <img class="img-style" src="img-test1.jpg" alt='#'/>
+             <div class="card-body card-text-style">
+                 <h4 class="card-title h5 h4-sm">Left image</h4>
+                 <p class="card-text">Example text</p>
+             </div>
+             <button class="btn btn-black" type="button">Remover</button>
+        </div>
         </ListGroup.Item>
-        <ListGroup.Item as="li">
-        <Card>
-                <Card.Img className="container-style" src="img-test1.jpg" alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>Game</Card.Title>
-                    <Card.Text>
-                    Lorem ipsum dolor sit amet consectetur.
-                    </Card.Text>
-                    <Card.Text>Rating</Card.Text>
-                </Card.ImgOverlay>
-                </Card>
+        <ListGroup.Item className='list-style'  as="li">
+        <div class="card flex-row card-style">
+            <img class="img-style" src="img-test1.jpg" alt='#'/>
+             <div class="card-body card-text-style">
+                 <h4 class="card-title h5 h4-sm">Left image</h4>
+                 <p class="card-text">Example text</p>
+             </div>
+             <button class="btn btn-black" type="button">Remover</button>
+        </div>
         </ListGroup.Item>
         </ListGroup>
     )
