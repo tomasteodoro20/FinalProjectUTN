@@ -11,11 +11,11 @@ function NavBarFix() {
     <Navbar key={expand} expand={expand} variant="dark" className="bg-color">
       <Container fluid>
       <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} justify-content-end/>
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-${expand}`}
           aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-          placement="end"
+          placement="end"          
         >
           <Offcanvas.Header closeButton className="bg-color">
             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>              
@@ -48,9 +48,9 @@ function NavBarFix() {
             <Nav.Link className="upcoming-btn" href="/Upcoming">Proximamente</Nav.Link>            
         </Nav>
             <SearchBar/>        
-            <ProfileMenu />      
           </Offcanvas.Body>
         </Navbar.Offcanvas>
+        <ProfileMenu />      
       </Container>
     </Navbar>
   ))}

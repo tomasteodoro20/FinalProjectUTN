@@ -21,7 +21,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 
  return(
     <>
-    <Dropdown align={{md:"end"}}>
+    <Dropdown align="end">
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
       </Dropdown.Toggle>
   

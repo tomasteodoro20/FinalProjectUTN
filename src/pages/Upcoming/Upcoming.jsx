@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 import NavBar from "../../components/navbar/NavBar";
 import NavFooter from '../../components/nav/NavFooter';
+import Divider from "../../components/divider/Divider";
 import CardsList from "../../components/cards/CardsList";
 import { upcomingGames } from "../../constants";
 
@@ -10,6 +11,7 @@ function Upcoming() {
     return (
     <>
     <NavBar/>
+    <Divider/>
     <CardsList 
     title="Próximos lanzamientos"
     gameList={gameList} 

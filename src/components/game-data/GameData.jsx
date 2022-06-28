@@ -42,7 +42,7 @@ function GameData () {
         <div className="game-details">
             <GameGenres url={url}/>
             <div className="consoles">            
-            <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>
+            {gameDetails.released && <p><span className="release-date">Fecha de lanzamiento: </span>{gameDetails.released}</p>}            
             <GameConsoles slug={slug}/>
             </div>
             <div

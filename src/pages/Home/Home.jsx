@@ -1,6 +1,6 @@
 import {React, useState} from "react";
 import ControlledCarousel from "../../components/carousel/Controlled-Carousel";
-import NavBar from "../../components/navbar/NavBar";
+import NavBarFix from "../../components/navbar/NavBarFix";
 import NavFooter from '../../components/nav/NavFooter';
 import Divider from '../../components/divider/Divider';
 import CardsList from "../../components/cards/CardsList";
@@ -13,7 +13,7 @@ function Home() {
 
     return (
     <>
-    <NavBar/>    
+    <NavBarFix/>    
     <ControlledCarousel/>
     <Divider/>
     <CardsList 
