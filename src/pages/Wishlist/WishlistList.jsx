@@ -12,7 +12,7 @@ function WishlistList () {
                  <h4 class="card-title h5 h4-sm">Left image</h4>
                  <p class="card-text">Example text</p>
              </div>
-             <button class="btn btn-black" type="button">Remover</button>
+             <button class="btn btn-black button-style" type="button">Remover</button>
         </div>
         </ListGroup.Item>
         <ListGroup.Item className='list-style'  as="li">
@@ -22,7 +22,7 @@ function WishlistList () {
                  <h4 class="card-title h5 h4-sm">Left image</h4>
                  <p class="card-text">Example text</p>
              </div>
-             <button class="btn btn-black" type="button">Remover</button>
+             <button class="btn btn-black button-style" type="button">Remover</button>
         </div>
         </ListGroup.Item>
         <ListGroup.Item className='list-style'  as="li">
@@ -32,7 +32,7 @@ function WishlistList () {
                  <h4 class="card-title h5 h4-sm">Left image</h4>
                  <p class="card-text">Example text</p>
              </div>
-             <button class="btn btn-black" type="button">Remover</button>
+             <button class="btn btn-black button-style" type="button">Remover</button>
         </div>
         </ListGroup.Item>
         </ListGroup>
