@@ -7,7 +7,7 @@ function WishlistBtn () {
     
     return (
 <>
-    <Link to="/Wishlist" className='custom-btn' type="button">
+    <Link to="/Wishlist" className='wishlist-btn' type="button">
         Lista de deseados ❤
     </Link> 
 </>

@@ -3,8 +3,23 @@
     text-align: center;
 }
 
-.container-style {
-    height: 120px;
-    color: black;
+.img-style {
+    height: 150px;
+    width: 300px;
 }
 
+.card-style {
+    background-color: #46469B;
+}
+
+.list-style {
+    background-color: #191A19;
+}
+
+.card-text-style{
+    color: #ffff;
+}
+
+.button-style {
+    color: #ffff;
+}
