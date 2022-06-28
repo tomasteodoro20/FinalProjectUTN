@@ -1,17 +1,28 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Offcanvas} from 'react-bootstrap';
 import "./navbar.styles.css";
 import SearchBar from "./SearchBar/SearchBar";
 import ProfileMenu from "./Profile Menu/ProfileMenu";
 
-function NavBar() {
-    return (    
-    <Navbar collapseOnSelect expand="md" variant="dark" className="bg-color">
-    <Container fluid>        
-        <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="navbarScroll">
-        <Nav className="me-auto my-2 my-lg-0" navbarScroll>
+function NavBarFix() {
+  return (
+    <>
+  {['md'].map((expand) => (
+    <Navbar key={expand} expand={expand} variant="dark" className="bg-color">
+      <Container fluid>
+      <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar.Offcanvas
+          id={`offcanvasNavbar-expand-${expand}`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+          placement="end"
+        >
+          <Offcanvas.Header closeButton className="bg-color">
+            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>              
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body variant="dark" className="bg-color">
+          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
                 <NavDropdown.Item href="/Action" className="link-style">Acción</NavDropdown.Item>
                 <NavDropdown.Divider />   
@@ -36,12 +47,15 @@ function NavBar() {
             </NavDropdown>            
             <Nav.Link className="upcoming-btn" href="/Upcoming">Proximamente</Nav.Link>            
         </Nav>
-        <SearchBar />
-        <ProfileMenu/>
-        </Navbar.Collapse>
-    </Container>
+            <SearchBar/>        
+            <ProfileMenu />      
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
     </Navbar>
-    )
+  ))}
+</>
+  )
 }
 
-export default NavBar;
+export default NavBarFix

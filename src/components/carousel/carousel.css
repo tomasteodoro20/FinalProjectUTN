@@ -23,7 +23,17 @@
     padding: .5em;
 }
 
-.link-style{
+.link-button{
+    text-transform: uppercase;
+    color: #fff;
+    padding: .3em;
+    border: 1px solid #330D71;
+    border-radius: 5px;
+    background-color: #330D71;  
+    color:white;
     text-decoration: none;
-    color: #ffff;
+}
+
+.link-button:hover{
+    color:white;
 }
