@@ -11,7 +11,7 @@ const videoProperties = [
       title: "Star Wars Jedi Fallen Order",
       src: 'https://www.youtube.com/watch?v=xIl2z5wwjdA',
       slug:`/jedi-the-fallen-order`,
-      description:"Star Wars Jedi: Fallen Order is an action-adventure game set after Star Wars: Episode III — Revenge of the Sith™. Develop your Force abilities, hone your lightsaber techniques, and explore the ancient mysteries of a long-lost civilization—all while staying one step ahead of the Empire and its deadly Inquisitors."
+      description:"Star Wars Jedi: Fallen Order is an action-adventure game set after Star Wars: Episode III - Revenge of the Sith™. Develop your Force abilities, hone your lightsaber techniques, and explore the ancient mysteries of a long-lost civilization -all while staying one step ahead of the Empire and its deadly Inquisitors."
     },
     {
       id:3,

@@ -33,9 +33,9 @@ function GameData () {
     return (
     <>
     <div className="game-header">
-            <h2>{gameDetails.name}</h2>            
-            <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
-            {gameDetails.website && <a href={gameDetails.website} className="website-button">Sitio oficial</a>}            
+        <h2>{gameDetails.name}</h2>            
+        <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
+        {gameDetails.website && <a href={gameDetails.website} className="website-button" target="__blank">Sitio oficial</a>}            
     </div>
     <Divider />
     <div className="game-data">
@@ -54,8 +54,7 @@ function GameData () {
             <GameScreenshots/>        
             <WishlistBtnAdd />
         </div>
-    </div>
-    
+    </div>    
     </>
     );
   }

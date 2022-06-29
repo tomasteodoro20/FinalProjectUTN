@@ -69,7 +69,7 @@ const game_publishers_no_page = `publishers`
 // export const popularGamesGet = () => `${ base_url }${ popular_games }`;
 // export const upcomingGamesGet = () => `${ base_url }${ upcoming_games }`;
 // export const newGamesGet = () => `${ base_url }${ new_games }`;
-export const searchGameGet = game_name => `${ base_url }${ query_games }${ game_name }&page_size=21`;
+export const searchGameGet = game_name => `${ base_url }${ query_games }${ game_name }`;
 export const gameDetailsGet = game_id => `${ base_url }${ game_details }${ game_id }?key=${ apiKey }`;
 export const gameScreenshotsGet = game_id => `${ base_url }${ game_details }${ game_id }${ game_screenshots }?key=${ apiKey }`;
 export const gameGenresGet = () => `${ base_url }${ game_genres }?key=${apiKey}`;

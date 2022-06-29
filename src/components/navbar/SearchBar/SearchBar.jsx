@@ -5,16 +5,27 @@ import {
   IconRightArrow,
   IconMagnifyingGlass
 } from "./searchbar.styles";
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
   const targetRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const showSearchInput = isHovered || isFocused;
+  const navigate = useNavigate();
+  const [filter, setFilter] = useState("");
 
+  
   useEffect(() => {
     targetRef.current.value = "";
   }, [showSearchInput]);
+
+  const handleClick = () => {
+    filter && navigate(`/SearchGame:${filter}`);    
+    window.location.reload(false)
+    // navigate("")
+        
+  }
 
   return (
     <Container
@@ -22,10 +33,10 @@ function SearchBar() {
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
-      hover={showSearchInput}
+      hover={showSearchInput}      
     >
-      <SearchInput ref={targetRef} showSearchInput={showSearchInput} />
-      {showSearchInput ? <IconRightArrow /> : <IconMagnifyingGlass />}
+      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)}/>
+      {showSearchInput ? <IconRightArrow onClick={handleClick} /> : <IconMagnifyingGlass />}
     </Container>
   );
 }

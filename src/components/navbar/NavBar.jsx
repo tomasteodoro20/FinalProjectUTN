@@ -1,18 +1,29 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Offcanvas} from 'react-bootstrap';
 import "./navbar.styles.css";
-import NuevaSearchBar from "./NuevaSearchBar/NuevaSearchBar";
-// import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import ProfileMenu from "./Profile Menu/ProfileMenu";
 
 function NavBar() {
-    return (    
-    <Navbar collapseOnSelect expand="md" variant="dark" className="bg-color">
-    <Container fluid>        
-        <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="navbarScroll">
-        <Nav className="me-auto my-2 my-lg-0" navbarScroll>
+  return (
+    <>  
+    <Navbar expand="md" variant="dark" className="bg-color">
+      <Container fluid>      
+      <Nav className="me-auto">
+      <Navbar.Brand href="/Home"><img height="60" src="logo.png" alt="logo GameOn"/>GameOn</Navbar.Brand>      
+      </Nav>
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+        <Navbar.Offcanvas
+          id={`offcanvasNavbar-expand-md`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+          placement="end"                    
+        >
+          <Offcanvas.Header closeButton className="bg-color">
+            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>              
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body className="bg-color">
+          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <NavDropdown title="GÉNEROS" id="navbarScrollingDropdown" className="fontSize">            
                 <NavDropdown.Item href="/Action" className="link-style">Acción</NavDropdown.Item>
                 <NavDropdown.Divider />   
@@ -37,13 +48,14 @@ function NavBar() {
             </NavDropdown>            
             <Nav.Link className="upcoming-btn" href="/Upcoming">Proximamente</Nav.Link>            
         </Nav>
-        <NuevaSearchBar />
-        {/* <SearchBar /> */}
-        <ProfileMenu/>
-        </Navbar.Collapse>
-    </Container>
+            <SearchBar/>        
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+        <ProfileMenu />      
+      </Container>
     </Navbar>
-    )
+</>
+  )
 }
 
-export default NavBar;
+export default NavBar
