@@ -15,30 +15,25 @@ function MyProfile () {
     return (
     <>
     <NavBar/>
-    <Row className='row-style'>
-    <Col className='justify-content-center'>
+    <div className='flex-style'>
     <h2 className='title-style'>Mi Perfil</h2>
-    </Col>
-    <Col></Col>
-    <Col>
     <Button className='delete-profile-btn'>Eliminar cuenta</Button>
-    </Col>
-    </Row>
+    </div>
     <Divider/>
-        <Row>
+    <Row>
         <Col>
-        <Image src='logo.png' roundedCircle></Image>
+            <Image src='logo.png' roundedCircle></Image>
         </Col>
         <Col className='text-style'>
-        <p>Usuario: </p>
-        <p>Nombre: </p> 
-        <p>Apellido: </p>
-        <p>E-mail: </p>
-        <p>Fecha de nacimiento: </p>
-    </Col>
-    <Col>
-    <WishlistButton/>
-    </Col>
+            <p>Usuario: </p>
+            <p>Nombre: </p> 
+            <p>Apellido: </p>
+            <p>E-mail: </p>
+            <p>Fecha de nacimiento: </p>
+        </Col>
+        <Col className='d-flex align-items-center'>
+            <WishlistButton/>
+        </Col>
     </Row>
     <Divider/>
     <CardsList

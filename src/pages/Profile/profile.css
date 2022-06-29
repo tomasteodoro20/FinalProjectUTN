@@ -1,26 +1,32 @@
 .delete-profile-btn{
-    background: #330D71 !important;
+    background: #330D71;
     color: #fff;
-    border: 2px solid #330D71 !important;
+    border: 2px solid #330D71;
     border-radius: 3px;
     padding: 5px 10px;
     text-transform: uppercase;
     margin-top: 1rem;
-    align-items: flex-end;
+    text-decoration: none;  
+    margin-right: 5rem;
+}
+
+.delete-profile-btn:hover {
+    color: #fff;
+    background-color: #240a4e;  
 }
 
 .title-style{
     color: #fff;
     margin-top: 1rem;
-    text-align: center;
+    margin-left: 5rem;
 }
 
 .text-style{
     color: #46469B;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
-.row-style{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.flex-style {
+    display: flex;
+    justify-content: space-between;
 }

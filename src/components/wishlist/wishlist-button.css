@@ -9,24 +9,21 @@
   border-radius: 3px;
   padding: 5px 10px;
   text-transform: uppercase;
-  /* margin-top: 5rem;
-  margin-bottom: 1rem; */
 }
 
-.custom-btn:hover{
+.custom-btn:hover {
   color: #fff;
   background-color: #240a4e;
 }
 
 .wishlist-btn {
-  background: #330D71 !important;
+  background: #330D71;
   color: #fff;
-  border: 2px solid #330D71 !important;
+  border: 2px solid #330D71;
   border-radius: 3px;
   padding: 5px 10px;
   text-transform: uppercase;
   margin-top: 1rem;
-  align-items: flex-end;
   text-decoration: none;
 }
 
