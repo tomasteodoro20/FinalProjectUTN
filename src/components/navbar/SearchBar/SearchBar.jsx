@@ -15,6 +15,11 @@ function SearchBar() {
   const navigate = useNavigate();
   const [filter, setFilter] = useState("");
 
+  
+  useEffect(() => {
+    targetRef.current.value = "";
+  }, [showSearchInput]);
+
   function handleKeyPress(e) {
     const key = e.key;
     if (key === "Enter") {    
@@ -22,16 +27,10 @@ function SearchBar() {
     window.location.reload(false)
 }
   }
-  
-  useEffect(() => {
-    targetRef.current.value = "";
-  }, [showSearchInput]);
-
   const handleClick = () => {
     filter && navigate(`/SearchGame:${filter}`);    
     window.location.reload(false)
-    // navigate("")
-        
+    // navigate("")    
   }
 
   return (
