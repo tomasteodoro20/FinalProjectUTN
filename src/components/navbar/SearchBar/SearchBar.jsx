@@ -22,7 +22,7 @@ function SearchBar() {
 
   function handleKeyPress(e) {
     const key = e.key;
-    if (key === "Enter") {    
+    if (key === "Enter") { 
     filter && navigate(`/SearchGame:${filter}`);
     window.location.reload(false)
 }
@@ -30,7 +30,6 @@ function SearchBar() {
   const handleClick = () => {
     filter && navigate(`/SearchGame:${filter}`);    
     window.location.reload(false)
-    // navigate("")    
   }
 
   return (
