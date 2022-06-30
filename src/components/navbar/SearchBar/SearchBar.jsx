@@ -16,7 +16,7 @@ function SearchBar() {
   const [filter, setFilter] = useState("");
 
   function handleKeyPress(e) {
-    var key = e.key;
+    const key = e.key;
     if (key === "Enter") {    
     filter && navigate(`/SearchGame:${filter}`);    
     window.location.reload(false)
