@@ -3,7 +3,7 @@ import './game-data.css';
 import {apiKey} from "../../constants/index";
 import {useParams} from "react-router-dom";
 
-const GameScreenshots = () => {    
+const GameScreenshots = ({background_image}) => {    
     const { slug } = useParams();
     const url = `https://api.rawg.io/api/games/${slug}/screenshots?key=${apiKey}`;    
 
@@ -16,11 +16,12 @@ const GameScreenshots = () => {
     },[setGameScreenshots]);
 
     return (
-        <div className="game-screenshots">            
-            {gameScreenshots.slice(0, 3).map((game) => (
-                <img className="screenshots-img" key={game.id} src={game.image} alt="Screenshot" />
-            )
-            )}          
+        <div className="game-screenshots">
+        {gameScreenshots.length === 0 && <img className="extra-screenshot" src={background_image} alt="Screenshot"/>}
+        {gameScreenshots.slice(0, 3).map((game) => (
+            <img className="screenshots-img" key={game.id} src={game.image} alt="Screenshot" />
+        )
+        )}          
         </div>
     )
 }
