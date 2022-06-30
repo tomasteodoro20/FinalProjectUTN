@@ -8,11 +8,12 @@ import GameGenres from "./GameGenres";
 import GameConsoles from "./GameConsoles";
 import GameStores from "./GameStores";
 import WishlistBtnAdd from "../wishlist/WishlistAdd";
-
+import LoadingGif from "../loading/LoadingGif";
 
 function GameData () {
     const { slug } = useParams();
     const [gameDetails, setGameDetails] = useState("");
+    const [loading, setLoading] = useState(true);
     const ratingStyle = `${
         gameDetails.rating > 3.5 ? "good" : gameDetails.rating < 3.5 && gameDetails.rating > 0 ? "bad" : "no"
     }-rating`;
@@ -23,6 +24,7 @@ function GameData () {
         const response = await fetch(url);
             const data = await response.json();
             setGameDetails(data);
+            setLoading(false);
         };
         
         useEffect(() => {
@@ -32,6 +34,8 @@ function GameData () {
 
     return (
     <>
+           {loading ? <LoadingGif/> : 
+           <>
     <div className="game-header">
         <h2>{gameDetails.name}</h2>            
         <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
@@ -54,7 +58,9 @@ function GameData () {
             <GameScreenshots background_image={gameDetails.background_image}/>        
             <WishlistBtnAdd />
         </div>
-    </div>    
+    </div> 
+    </>
+    }   
     </>
     );
   }

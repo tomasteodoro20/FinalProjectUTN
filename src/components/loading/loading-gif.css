@@ -1,8 +1,33 @@
 .gif-style {
-    display: flex;
-    justify-content: center;
+    max-width: 90vw;
 }
 
 .gif-style img {
+    animation: mover 3s forwards;
     max-width: 90vw;
+    width: 200px;
+    object-fit: cover;
+}
+
+@keyframes mover {
+    0% { transform: translateX(10vw); }
+    100% { transform: translateX(80vw); }
+}
+
+@media (max-width:576px){
+
+    .gif-style{
+
+        display: flex;
+
+        justify-content: center;
+
+    }
+
+    .gif-style img{
+
+        animation: none
+
+    }
+
 }
