@@ -18,7 +18,7 @@ function SearchBar() {
   function handleKeyPress(e) {
     const key = e.key;
     if (key === "Enter") {    
-    filter && navigate(`/SearchGame:${filter}`);    
+    filter && navigate(`/SearchGame:${filter}`);
     window.location.reload(false)
 }
   }
