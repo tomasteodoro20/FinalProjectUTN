@@ -15,6 +15,13 @@ function SearchBar() {
   const navigate = useNavigate();
   const [filter, setFilter] = useState("");
 
+  function handleKeyPress(e) {
+    var key = e.key;
+    if (key === "Enter") {    
+    filter && navigate(`/SearchGame:${filter}`);    
+    window.location.reload(false)
+}
+  }
   
   useEffect(() => {
     targetRef.current.value = "";
@@ -35,7 +42,7 @@ function SearchBar() {
       onBlur={() => setIsFocused(false)}
       hover={showSearchInput}      
     >
-      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)}/>
+      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)} onKeyPress={(e) => handleKeyPress(e)}/>
       {showSearchInput ? <IconRightArrow onClick={handleClick} /> : <IconMagnifyingGlass />}
     </Container>
   );
