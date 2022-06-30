@@ -11,7 +11,7 @@ const GameCard = (game) => {
     return (
         <div className="gamecard">            
             <Link to={`/${game.slug}`}>
-                <img src={game.background_image} alt={game.name}/>                       
+                <img src={game.background_image ? game.background_image : "notfound.png"} alt={game.name}/>                       
             </Link>
             <div className="game-info">
                 <h3 className="game-info">{game.name}</h3>            

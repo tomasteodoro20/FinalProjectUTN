@@ -51,7 +51,7 @@ function GameData () {
             <GameStores slug={slug}/>
         </div>
         <div className="game-extra">
-            <GameScreenshots/>        
+            <GameScreenshots background_image={gameDetails.background_image}/>        
             <WishlistBtnAdd />
         </div>
     </div>    
