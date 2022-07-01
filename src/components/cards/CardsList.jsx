@@ -18,10 +18,10 @@ const CardsList = ({title, url, gameList, setGameList}) => {
 
     return (
         <>
-       {loading ? <LoadingGif/> : 
-              <>
               <h2 className="title">{title}</h2>
                <Divider/>
+       {loading ? <LoadingGif/> : 
+              <>
                <div className="container-gamecards">
                    {gameList.map((game) => (
                        <GameCard 
