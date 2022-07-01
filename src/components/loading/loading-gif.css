@@ -3,7 +3,7 @@
 }
 
 .gif-style img {
-    animation: mover 3s forwards;
+    animation: mover 3s infinite;
     max-width: 90vw;
     width: 200px;
     object-fit: cover;
