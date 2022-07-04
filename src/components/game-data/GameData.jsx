@@ -31,10 +31,13 @@ function GameData () {
             fetchDetails();
         }, []);
         
+        if (loading) {
+            return <LoadingGif/>
+        }
 
     return (
     <>
-           {loading ? <LoadingGif/> : 
+           {gameDetails.detail === "Not found." ? <p className="no-results">La página no se encuentra disponible</p> : 
            <>
     <div className="game-header">
         <h2>{gameDetails.name}</h2>            

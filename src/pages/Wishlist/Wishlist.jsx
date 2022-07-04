@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../../components/navbar/NavBar';
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
 import WishlistList from './WishlistList';
 import { Container } from 'react-bootstrap';
@@ -16,7 +16,7 @@ function Wishlist () {
         <Container>
             <WishlistList/>
         </Container>
-        <NavFooter/>
+        <Footer/>
         </>
     )
 }

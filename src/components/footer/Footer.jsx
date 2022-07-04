@@ -1,8 +1,8 @@
 import React from 'react';
-import './nav.css';
+import './footer.css';
 
 
-function NavFooter() {
+function Footer() {
   return (
   <>
   <footer className="footer-container">
@@ -17,4 +17,4 @@ function NavFooter() {
   )
 }
 
-export default NavFooter;
+export default Footer;

@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from 'react-bootstrap';
 import RegisterForm from '../../components/register/RegisterForm';
 import NavBar from '../../components/navbar/NavBar';
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
 import './register.css'
 
@@ -15,7 +15,7 @@ function Register () {
         <Divider/>
         <RegisterForm/>
         </Container>
-        <NavFooter/>
+        <Footer/>
         </>
     )
 }

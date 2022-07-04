@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from "../../components/navbar/NavBar";
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import GameData from '../../components/game-data/GameData';
 
 function Game ({slug}) {
@@ -8,7 +8,7 @@ function Game ({slug}) {
         <>
         <NavBar/>
         <GameData slug={slug}/>
-        <NavFooter/>
+        <Footer/>
         </>
     )
 }

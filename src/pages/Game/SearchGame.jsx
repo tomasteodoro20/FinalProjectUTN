@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from "../../components/navbar/NavBar";
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import CardsList from '../../components/cards/CardsList';
-import { searchGamesTest } from '../../constants/index';
+import { searchGames } from '../../constants/index';
 
 function SearchGame () {
     const { name } = useParams();
-    const url = searchGamesTest + name;
+    const url = searchGames + name;
     const [gameList, setGameList] = useState([]);
 
     return (
@@ -19,7 +19,7 @@ function SearchGame () {
         setGameList={setGameList}
         url={url}
         />
-        <NavFooter/>
+        <Footer/>
         </>
     )
 }
