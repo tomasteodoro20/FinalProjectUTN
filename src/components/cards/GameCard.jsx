@@ -14,7 +14,7 @@ const GameCard = (game) => {
                 <img src={game.background_image ? game.background_image : "notfound.png"} alt={game.name}/>                       
             </Link>
             <div className="game-info">
-                <h3 className="game-info">{game.name}</h3>            
+                <h3 className="game-info">{game.name.length > 30 ? game.name.slice(0,30) + "..." : game.name}</h3>            
             <GameConsoles slug={game.slug}/>
             </div>
             <div className="game-overview">
