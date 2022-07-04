@@ -2,7 +2,7 @@ import styled, { css, keyframes } from "styled-components";
 import SearchIcon from "./search";
 import ArrowRightIcon from "./arrowRight";
 
-export const Container = styled.div`
+export const Container = styled.form`
   position: relative;  
   width: 50px;
   height: 40px;
@@ -83,4 +83,18 @@ export const IconRightArrow = styled(ArrowRightIcon)`
   &:hover {
     fill: #393e46;
   }
+  
+`;
+
+export const SearchButton = styled.button`
+  border: none;
+  color:#393e46;
+  background-color:transparent;
+  align-self: flex-end;
+  cursor: pointer;
+  ${'' /* height: 1rem;
+  width: 1rem; */}
+  fill: #00adb5;
+  z-index: 10;
+  animation: ${fadeIn} 1s linear; 
 `;

@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import {
   Container,
   SearchInput,
-  IconRightArrow,
+  SearchButton,  
   IconMagnifyingGlass
 } from "./searchbar.styles";
 import { useNavigate } from 'react-router-dom';
+
 
 function SearchBar() {
   const targetRef = useRef(null);
@@ -20,16 +21,16 @@ function SearchBar() {
     targetRef.current.value = "";
   }, [showSearchInput]);
 
-  function handleKeyPress(e) {
-    const key = e.key;
-    if (key === "Enter") { 
-    filter && navigate(`/SearchGame:${filter}`);
-    window.location.reload(false)
-}
-  }
-  const handleClick = () => {
-    filter && navigate(`/SearchGame:${filter}`);    
-    window.location.reload(false)
+//   function handleKeyPress(e) {
+//     const key = e.key;
+//     if (key === "Enter") { 
+//     filter && navigate(`/SearchGame:${filter}`);
+//     // window.location.reload(false)
+// }
+// }
+  const handleSubmit = (e) => {
+    filter ? navigate(`/SearchGame:${filter}`) : e.preventDefault();    
+    // window.location.reload(false)
   }
 
   return (
@@ -39,9 +40,11 @@ function SearchBar() {
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       hover={showSearchInput}      
+      onSubmit={handleSubmit}
     >
-      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)} onKeyPress={(e) => handleKeyPress(e)}/>
-      {showSearchInput ? <IconRightArrow onClick={handleClick} /> : <IconMagnifyingGlass />}
+      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)} />
+      {/* onKeyPress={(e) => handleKeyPress(e)} */}
+      {showSearchInput ? <SearchButton>➜</SearchButton> : <IconMagnifyingGlass />}
     </Container>
   );
 }
