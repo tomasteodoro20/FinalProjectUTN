@@ -17,6 +17,7 @@ import Upcoming from './pages/Upcoming/Upcoming'
 import Wishlist from './pages/Wishlist/Wishlist';
 import SearchGame from './pages/Game/SearchGame';
 
+
 function App() { 
 
   return (

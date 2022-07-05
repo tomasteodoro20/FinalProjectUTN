@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import NavBar from "../../components/navbar/NavBar";
 import Divider from '../../components/divider/Divider';
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import CardsList from "../../components/cards/CardsList";
 import { fetchRacingGames} from "../../constants";
 
@@ -18,7 +18,7 @@ function Racing() {
     setGameList={setGameList}
     url={fetchRacingGames}
     />
-    <NavFooter/>
+    <Footer/>
     </>
     )
 }

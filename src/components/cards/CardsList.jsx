@@ -16,12 +16,16 @@ const CardsList = ({title, url, gameList, setGameList}) => {
             fetchList();
         }, []);
 
+        if (loading) {
+            return <LoadingGif/>
+        }
+
     return (
         <>
-              <h2 className="title">{title}</h2>
-               <Divider/>
-       {loading ? <LoadingGif/> : 
-              <>
+            <h2 className="title">{title}</h2>
+            <Divider/>
+            {gameList.length === 0 ? <p className="no-results">La búsqueda no obtuvo resultados. Intenta nuevamente</p> : 
+            <>
                <div className="container-gamecards">
                    {gameList.map((game) => (
                        <GameCard 
@@ -37,7 +41,7 @@ const CardsList = ({title, url, gameList, setGameList}) => {
                    )}
                </div>
            </>
-       }
+            }
         </>
     )
 }

@@ -1,7 +1,7 @@
 import {React, useState} from 'react';
 import {Button, Image, Col, Row} from 'react-bootstrap';
 import NavBar from '../../components/navbar/NavBar';
-import NavFooter from '../../components/nav/NavFooter';
+import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
 import './profile.css'
 import WishlistButton from '../../components/wishlist/WishlistButton';
@@ -37,17 +37,12 @@ function MyProfile () {
     </Row>
     <Divider/>
     <CardsList
-
     title="Últimas novedades"
-
     gameList={gameList}
-
     setGameList={setGameList}
-
     url={latestGames}
-
     />
-    <NavFooter/>
+    <Footer/>
     </>
     )
 }
