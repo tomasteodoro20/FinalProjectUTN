@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Button, Image, Col, Row} from 'react-bootstrap';
+import {Image, Col, Row} from 'react-bootstrap';
 import NavBar from '../../components/navbar/NavBar';
 import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
@@ -17,9 +17,9 @@ function MyProfile () {
     <NavBar/>
     <div className='flex-style'>
     <h2 className='title-style'>Mi Perfil</h2>
-    <Button className='delete-profile-btn'>Eliminar cuenta</Button>
+    <button className='delete-profile-btn'>Eliminar cuenta</button>
     </div>
-    <Divider/>
+    <Divider/>d
     <Row>
         <Col>
             <Image src='logo.png' roundedCircle></Image>
