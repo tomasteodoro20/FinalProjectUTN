@@ -18,8 +18,13 @@ class Register extends React.Component{
         errorMsg:"",
     }
 
-    handlerSubmit(e){
+    handlerSubmit=(e) => {
+        const url = database;
         e.preventDefault();
+        axios.post(url,this.state.form)
+        .then( response =>{
+            console.log(response);
+        })
     }
 
     hanlderOnChange = async e =>{
@@ -31,17 +36,9 @@ class Register extends React.Component{
         })
     }
 
-    handlerButton=()=>{
-        const url = database;
-        axios.post(url,this.state.form)
-        .then( response =>{
-            console.log(response);
-        })
-    }
-
     render(){
     return (
-    <Form className="register-form" onSubmit={this.preventDefault}>
+    <Form className="register-form" onSubmit={this.handlerSubmit}>
     <Form.Group controlId="formBasicUser">
         <Form.Label>Usuario</Form.Label>
         <Form.Control type="username" placeholder="Usuario" name="username" onChange={this.hanlderOnChange}/>
@@ -72,7 +69,13 @@ class Register extends React.Component{
         <Form.Control type="email" placeholder="Enter email" name="email" onChange={this.hanlderOnChange}/>
     </Form.Group>
 
-    <Button className="custom-btn" type="submit" onClick={this.handlerButton}>
+    {/* <Form.Group controlId="file">
+        <Form.Label>Avatar</Form.Label>
+        <Form.Control type="file" placeholder="file" name="avatar" onChange={this.hanlderOnChange}/>
+    </Form.Group> */}
+
+
+    <Button className="custom-btn" type="submit">
         Crear usuario
     </Button>
     </Form>
