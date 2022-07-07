@@ -6,10 +6,12 @@ import { database } from "../../db-config/db";
 
 class Register extends React.Component{
 
+    
     state={
         form:{
             "username":"",
             "password":"",
+            "repeatpassword":"",
             "firstname":"",
             "lastname":"",
             "email":"",
@@ -17,7 +19,8 @@ class Register extends React.Component{
         error:false,
         errorMsg:"",
     }
-
+    
+    
     handlerSubmit=(e) => {
         const url = database;
         e.preventDefault();
@@ -26,7 +29,7 @@ class Register extends React.Component{
             console.log(response);
         })
     }
-
+    
     hanlderOnChange = async e =>{
         await this.setState({
             form:{
@@ -35,7 +38,7 @@ class Register extends React.Component{
             }
         })
     }
-
+    
     render(){
     return (
     <Form className="register-form" onSubmit={this.handlerSubmit}>
@@ -48,6 +51,12 @@ class Register extends React.Component{
         <Form.Label>Contraseña</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password" onChange={this.hanlderOnChange}/>
     </Form.Group>
+
+    <Form.Group controlId="formBasicPassword">
+        <Form.Label>Repetir contraseña</Form.Label>
+        <Form.Control type="password" placeholder="RepeatPassword" name="repeatpassword" onChange={this.hanlderOnChange}/>
+    </Form.Group>
+
 
     <Form.Group controlId="formBasicName">
         <Form.Label>Nombre</Form.Label>
