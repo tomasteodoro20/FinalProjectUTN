@@ -16,6 +16,7 @@ import Game from './pages/Game/Game';
 import Upcoming from './pages/Upcoming/Upcoming'
 import Wishlist from './pages/Wishlist/Wishlist';
 import SearchGame from './pages/Game/SearchGame';
+import Register from './pages/Register/Register';
 
 
 function App() { 
@@ -40,6 +41,7 @@ function App() {
         <Route path='/Upcoming' element={<Upcoming/>}></Route>
         <Route path='/Wishlist' element={<Wishlist/>}></Route>
         <Route path='/SearchGame:name' element={<SearchGame/>}></Route>
+        <Route path='/Register' element={<Register/>}></Route>
       </Routes>
     </BrowserRouter>
   );
