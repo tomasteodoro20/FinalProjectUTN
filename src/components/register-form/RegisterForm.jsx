@@ -1,13 +1,13 @@
 import React from "react";
-import { Form, Button } from 'react-bootstrap';
-import './register-form.css';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from 'yup';
 import axios from 'axios';
 import { database } from "../../db-config/db";
+import { useState } from "react";
+import "./register-form.css";
 
-class Register extends React.Component{
-
-    
-    state={
+const RegisterValidations = () => {
+    const {state, setState} = useState({       
         form:{
             "username":"",
             "password":"",
@@ -15,80 +15,106 @@ class Register extends React.Component{
             "firstname":"",
             "lastname":"",
             "email":"",
-        },
-        error:false,
-        errorMsg:"",
-    }
-    
-    
-    handlerSubmit=(e) => {
+    },
+})
+ 
+    const handlerSubmit=(e) => {
         const url = database;
         e.preventDefault();
-        axios.post(url,this.state.form)
+        axios.post(url,state.form)
         .then( response =>{
             console.log(response);
         })
     }
     
-    hanlderOnChange = async e =>{
-        await this.setState({
+    const hanlderOnChange = async e =>{
+        await setState({
             form:{
-                ...this.state.form,
+                ...state.form,
                 [e.target.name]: e.target.value
             }
         })
     }
-    
-    render(){
     return (
-    <Form className="register-form" onSubmit={this.handlerSubmit}>
-    <Form.Group controlId="formBasicUser">
-        <Form.Label>Usuario</Form.Label>
-        <Form.Control type="username" placeholder="Usuario" name="username" onChange={this.hanlderOnChange}/>
-    </Form.Group>
+        <Formik 
+        initialValues={{
+            username: "",
+            password: "",
+            repeatpassword: "",
+            firstname: "",
+            lastname: "",
+            email: "",    }}
+            validationSchema={Yup.object({
+                username: Yup.string()
+                    .min(3, "No puede tener menos de 3 caracteres ")
+                    .max(15, "No puede tener más de 15 caracteres")
+                    .required("Introduzca un nombre de usuario por favor"),
+                password: Yup.string()
+                    .min(5, "No puede tener menos de 5 caracteres")
+                    .required("Introduzca una contraseña por favor"),
+                repeatpassword: Yup.string()
+                    .oneOf([Yup.ref('password'), null], 'Las contraseñas deben ser iguales'),
+                firstname: Yup.string()
+                    .min(2, "No puede contener menos de 2 caracteres")
+                    .max(15, "No puede tener mas de 15 caracteres")
+                    .matches(/^[aA-zZ\s]+$/, "No se permiten números ni caracteres especiales")
+                    .required("Introduzca su primer nombre por favor"),
+                lastname: Yup.string()
+                    .min(2, "No puede tener menos de 2 caracteres")
+                    .matches(/^[aA-zZ\s]+$/, "No se permiten números ni caracteres especiales")
+                    .required("Introduzca su apellido por favor"),
+                email: Yup.string().email("Ingrese un email válido")
+                    .required("Introduzca un mail por favor"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                    state.setState = handlerSubmit();
+                    setSubmitting(false);
+                }, 500);
+            }}
+        >
+            <Form className="register-form">
+            <label htmlFor="username">Nombre de usuario</label>
+            <Field name="username" type="text"/>
+            <ErrorMessage name="username">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
 
-    <Form.Group controlId="formBasicPassword">
-        <Form.Label>Contraseña</Form.Label>
-        <Form.Control type="password" placeholder="Password" name="password" onChange={this.hanlderOnChange}/>
-    </Form.Group>
+            <label htmlFor="password">Contraseña</label>
+            <Field name="password" type="password"/>
+            <ErrorMessage name="password">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
+            
+            <label htmlFor="repeatpassword">Confirmar Contraseña</label>
+            <Field name="repeatpassword" type="password"/>
+            <ErrorMessage name="repeatpassword">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
+            
+            <label htmlFor="firstname">Nombre</label>
+            <Field name="firstname" type="text"/>
+            <ErrorMessage name="firstname">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
+            
+            <label htmlFor="lastname">Apellido</label>
+            <Field name="lastname" type="text"/>
+            <ErrorMessage name="lastname">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
+           
+            <label htmlFor="email">Email</label>
+            <Field name="email" type="email"/>
+            <ErrorMessage name="email">
+            { msg => <div className='error-color'>{msg}</div> }
+            </ErrorMessage>            
 
-    <Form.Group controlId="formBasicPassword">
-        <Form.Label>Repetir contraseña</Form.Label>
-        <Form.Control type="password" placeholder="RepeatPassword" name="repeatpassword" onChange={this.hanlderOnChange}/>
-    </Form.Group>
+            <button className="custom-btn" type="submit" >Registrarme</button>
+            </Form>
 
-
-    <Form.Group controlId="formBasicName">
-        <Form.Label>Nombre</Form.Label>
-        <Form.Control type="firstname" placeholder="Nombre" name="firstname" onChange={this.hanlderOnChange}/>
-    </Form.Group>
-
-    <Form.Group controlId="formBasicLastName">
-        <Form.Label>Apellido</Form.Label>
-        <Form.Control type="lastname" placeholder="Apellido" name="lastname" onChange={this.hanlderOnChange}/>
-    </Form.Group>
-
-    <Form.Group controlId="formBasicDate">
-        <Form.Label>Fecha de Nacimiento</Form.Label>
-        <Form.Control type="date" placeholder="Fecha" name="date" onChange={this.hanlderOnChange}/>
-    </Form.Group>
-
-    <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" name="email" onChange={this.hanlderOnChange}/>
-    </Form.Group>
-
-    {/* <Form.Group controlId="file">
-        <Form.Label>Avatar</Form.Label>
-        <Form.Control type="file" placeholder="file" name="avatar" onChange={this.hanlderOnChange}/>
-    </Form.Group> */}
-
-
-    <Button className="custom-btn" type="submit">
-        Crear usuario
-    </Button>
-    </Form>
-    )}
+        </Formik>
+    )
 }
 
-export default Register;
+export default RegisterValidations;
