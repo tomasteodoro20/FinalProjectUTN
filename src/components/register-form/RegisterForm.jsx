@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, Form, Field, useFormik } from "formik";
 import * as yup from 'yup';
 import axios from 'axios';
-// import { database } from "../../db-config/db";
 import { useState } from "react";
 import "./register-form.css";
 
@@ -43,7 +42,6 @@ const validationSchema = yup.object({
             .required("Introduzca un mail por favor"),
     })
     
-// const url = database;
 
 const onChange = async (e) => {    
     await setValues(values[e.target.name] = e.target.value)
