@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, useFormik } from "formik";
 import * as yup from 'yup';
 import axios from 'axios';
-import { useState } from "react";
 import "./login-form.css";
 import { useNavigate } from "react-router-dom";
-
+import useUser from "../navbar/Profile Menu/context/useUser";
 
 const LoginForm = () => {
     let navigate = useNavigate();
 
     const [success, setSuccess] = useState(null);
     const [error, setError ] = useState(null);
+    const {login, isLogged} = useUser();
     const {values, setValues} = useState({
         "email":"",
         "password":"",
 })
+
+useEffect(() => {
+  if (isLogged) navigate("/Home");
+}, [isLogged, navigate])
+
 
 const validationSchema = yup.object({
     email: yup.string()
@@ -25,25 +30,25 @@ const validationSchema = yup.object({
     .required("Introduzca una contraseña por favor")
     .min(5, "No puede tener menos de 5 caracteres")        
 })
-    
 
 const onChange = async (e) => {    
     await setValues(values[e.target.name] = e.target.value)
 }
 
 const onSubmit = async (values) =>{
-    const response = await axios.post("http://localhost:5000/login", values).catch((err) => {
+  const response = await axios.post("http://localhost:5000/login", values).catch((err) => {
     console.log(values)
-      if (err && err.response)
-      setError(err.response.data.message)
-    });
+    if (err && err.response)
+    setError(err.response.data.message)
+  });
 
     if(response && response.data){
       setSuccess(response.data.message);
       formik.resetForm();
-      setTimeout(() => {
-        navigate("/home", { replace: true });
-      }, 2000);      
+      login();
+      // setTimeout(() => {
+      //   // navigate("/home", { replace: true });
+      // }, 2000);      
     }
   }
 

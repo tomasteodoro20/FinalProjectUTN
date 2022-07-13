@@ -1,6 +1,7 @@
 import React from 'react'
 import {Dropdown} from 'react-bootstrap'
 import '../navbar.styles.css'
+import useUser from './context/useUser';
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
@@ -18,13 +19,16 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   
   function ProfileMenu () {
 
+    const {isLogged} = useUser()
+
  return(
     <>
     <Dropdown align="end">
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
       </Dropdown.Toggle>
-  
-      <Dropdown.Menu>
+    {
+    isLogged 
+    ?  <Dropdown.Menu>
         <Dropdown.Item className='link-style' href="/MyProfile">Mi Perfil</Dropdown.Item>
         <Dropdown.Divider/>
         <Dropdown.Item className='link-style' href='/Wishlist'>Lista de Deseados</Dropdown.Item>
@@ -33,6 +37,12 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <Dropdown.Divider/>
         <Dropdown.Item className='link-style' href='/Wishlist'>Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
+      : <Dropdown.Menu>
+        <Dropdown.Item className='link-style' href="/Register">Registrarse</Dropdown.Item>
+        <Dropdown.Divider/>
+        <Dropdown.Item className='link-style' href='/Login'>Iniciar Sesión</Dropdown.Item>
+        </Dropdown.Menu>
+      }
     </Dropdown>
     </>
 );
