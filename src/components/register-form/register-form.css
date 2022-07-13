@@ -19,11 +19,17 @@
     margin-top: 1rem;
   }
 
-.error-color{
-    color: tomato;
-}
-
 .custom-btn:hover {
     color: #fff !important;
     background-color: #240a4e !important;  
+}
+
+.success-message{
+    color: rgb(43, 128, 43);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.error-message{
+    color: tomato;
 }

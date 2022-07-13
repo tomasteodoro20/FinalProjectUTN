@@ -4,9 +4,13 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { useState } from "react";
 import "./login-form.css";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginForm = () => {
-    // const [success, setSuccess] = useState(null);
+    let navigate = useNavigate();
+
+    const [success, setSuccess] = useState(null);
     const [error, setError ] = useState(null);
     const {values, setValues} = useState({
         "email":"",
@@ -14,12 +18,13 @@ const LoginForm = () => {
 })
 
 const validationSchema = yup.object({
-        email: yup.string().required(),
-        
-
-        password: yup.string().required(),
-
-    })
+    email: yup.string()
+    .email("Ingrese un email válido")
+    .required("Introduzca un mail por favor"),
+    password: yup.string()
+    .required("Introduzca una contraseña por favor")
+    .min(5, "No puede tener menos de 5 caracteres")        
+})
     
 
 const onChange = async (e) => {    
@@ -27,44 +32,21 @@ const onChange = async (e) => {
 }
 
 const onSubmit = async (values) =>{
-
-    setError(null);
-
     const response = await axios.post("http://localhost:5000/login", values).catch((err) => {
-
+    console.log(values)
       if (err && err.response)
-
       setError(err.response.data.message)
-
     });
 
-
-
-    if(response){
-      console.log("Im alive!")
-      alert("Bienvenido/a, cargando...")
-
+    if(response && response.data){
+      setSuccess(response.data.message);
+      formik.resetForm();
+      setTimeout(() => {
+        navigate("/home", { replace: true });
+      }, 2000);      
     }
-
   }
 
-// const onSubmit = async (values) => {
-//     const {confirmPassword, ...data} = values;
-
-//     const response = await axios.get("http://localhost:5000/login", data).catch((err) => {
-//       if(err && err.response)
-//         setError(err.response.data.message)
-//         setSuccess(null);
-//     })
-    
-//     if (response === response.data) {
-//       setError(null);
-//       setSuccess(response.data.message);
-//       formik.resetForm();
-//     }
-    
-//   };
-    
 const formik = useFormik({
     initialValues: values,
     validateOnBlur: true,
@@ -74,18 +56,17 @@ const formik = useFormik({
         
     return (
         <Formik>
-        <Form  className="login-form" onSubmit={formik.handleSubmit}>
-        <span style={{color:"red"}}>{error ? error : ""}</span>    
-        {/* {!error && <span style={{color:"green"}}>{success ? success : ""}</span>} */}
-        {/* {!success && <span style={{color:"red"}}>{error ? error : ""}</span>} */}
+        <Form  className="login-form" onSubmit={formik.handleSubmit}>        
+        {!error && <span className="success-message">{success ? success : ""}</span>}
+        {!success && <span className="error-message">{error ? error : ""}</span>}
+        
             <label htmlFor="email">Email</label>
             <Field name="email" type="email"  
             value={formik.values.email || ""} 
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}/>
             {formik.touched.email && formik.errors.email ? 
-            <span className="error-color">{formik.errors.email}</span> : ""}
-                        
+            <span className="error-message">{formik.errors.email}</span> : ""}                        
 
             <label htmlFor="password">Contraseña</label>
             <Field name="password" type="password"
@@ -94,11 +75,10 @@ const formik = useFormik({
             onBlur={formik.handleBlur}
             />
             {formik.touched.password && formik.errors.password ? 
-            <span className="error-color">{formik.errors.password}</span> : ""}
+            <span className="error-message">{formik.errors.password}</span> : ""}
             
             <button className="custom-btn" type="submit" >Iniciar Sesión</button>
             </Form>
-
         </Formik>
     )
 }

@@ -22,6 +22,10 @@ router.post("/login", async (req, res) => {
       .status(400)
       .json({ message: "Los datos son incorrectos" });
 
+  if (userWithEmail && userWithEmail.password === password) {
+    return res
+      .json({ message: "Ingresaste correctamente" });
+  }
 });
 
 module.exports = router;
