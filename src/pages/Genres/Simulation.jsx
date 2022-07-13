@@ -10,7 +10,6 @@ function Simulation() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de simulación"
@@ -18,7 +17,6 @@ function Simulation() {
     setGameList={setGameList}
     url={fetchSimulationGames}
     />
-    <Footer/>
     </>
     )
 }

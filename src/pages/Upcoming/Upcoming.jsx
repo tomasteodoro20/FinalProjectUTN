@@ -10,7 +10,6 @@ function Upcoming() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Próximos lanzamientos"
@@ -18,7 +17,6 @@ function Upcoming() {
     setGameList={setGameList}
     url={upcomingGames}
     />
-    <Footer/>
     </>
     )
 }

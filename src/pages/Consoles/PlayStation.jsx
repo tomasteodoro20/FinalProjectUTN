@@ -10,7 +10,6 @@ function PlayStation() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de PS4"
@@ -18,7 +17,6 @@ function PlayStation() {
     setGameList={setGameList}
     url={fetchPS4Games}
     />
-    <Footer/>
     </>
     )
 }

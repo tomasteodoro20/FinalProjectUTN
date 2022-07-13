@@ -6,20 +6,19 @@ import { useState } from "react";
 import "./login-form.css";
 
 const LoginForm = () => {
-    const [success, setSuccess] = useState(null);
+    // const [success, setSuccess] = useState(null);
     const [error, setError ] = useState(null);
     const {values, setValues} = useState({
-        "username":"",
+        "email":"",
         "password":"",
 })
 
 const validationSchema = yup.object({
-        email: yup.string().email("Ingrese un email válido")
-        .required("Introduzca un mail por favor"),
+        email: yup.string().required(),
+        
 
-        password: yup.string()
-            .min(5, "No puede tener menos de 5 caracteres")
-            .required("Introduzca una contraseña por favor"),
+        password: yup.string().required(),
+
     })
     
 
@@ -27,22 +26,44 @@ const onChange = async (e) => {
     await setValues(values[e.target.name] = e.target.value)
 }
 
-const onSubmit = async (values) => {
-    const {confirmPassword, ...data} = values;
+const onSubmit = async (values) =>{
 
-    const response = await axios.get("http://localhost:5000/login", data).catch((err) => {
-      if(err && err.response)
-        setError(err.response.data.message)
-        setSuccess(null);
-    })
-    
-    if (response === response.data) {
-      setError(null);
-      setSuccess(response.data.message);
-      formik.resetForm();
+    setError(null);
+
+    const response = await axios.post("http://localhost:5000/login", values).catch((err) => {
+
+      if (err && err.response)
+
+      setError(err.response.data.message)
+
+    });
+
+
+
+    if(response){
+      console.log("Im alive!")
+      alert("Bienvenido/a, cargando...")
+
     }
+
+  }
+
+// const onSubmit = async (values) => {
+//     const {confirmPassword, ...data} = values;
+
+//     const response = await axios.get("http://localhost:5000/login", data).catch((err) => {
+//       if(err && err.response)
+//         setError(err.response.data.message)
+//         setSuccess(null);
+//     })
     
-  };
+//     if (response === response.data) {
+//       setError(null);
+//       setSuccess(response.data.message);
+//       formik.resetForm();
+//     }
+    
+//   };
     
 const formik = useFormik({
     initialValues: values,
@@ -54,8 +75,9 @@ const formik = useFormik({
     return (
         <Formik>
         <Form  className="login-form" onSubmit={formik.handleSubmit}>
-        {!error && <span style={{color:"green"}}>{success ? success : ""}</span>}
-        {!success && <span style={{color:"red"}}>{error ? error : ""}</span>}
+        <span style={{color:"red"}}>{error ? error : ""}</span>    
+        {/* {!error && <span style={{color:"green"}}>{success ? success : ""}</span>} */}
+        {/* {!success && <span style={{color:"red"}}>{error ? error : ""}</span>} */}
             <label htmlFor="email">Email</label>
             <Field name="email" type="email"  
             value={formik.values.email || ""} 

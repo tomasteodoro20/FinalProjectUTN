@@ -10,7 +10,6 @@ function XBOX() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de XBOX"
@@ -18,7 +17,6 @@ function XBOX() {
     setGameList={setGameList}
     url={fetchXboxGames}
     />
-    <Footer/>
     </>
     )
 }

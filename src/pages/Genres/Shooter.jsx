@@ -10,7 +10,6 @@ function Shooter() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos shooter"
@@ -18,7 +17,6 @@ function Shooter() {
     setGameList={setGameList}
     url={fetchShooterGames}
     />
-    <Footer/>
     </>
     )
 }

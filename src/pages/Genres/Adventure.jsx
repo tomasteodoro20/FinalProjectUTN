@@ -10,7 +10,6 @@ function Adventure() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de aventura"
@@ -18,7 +17,6 @@ function Adventure() {
     setGameList={setGameList}
     url={fetchAdventureGames}
     />
-    <Footer/>
     </>
     )
 }

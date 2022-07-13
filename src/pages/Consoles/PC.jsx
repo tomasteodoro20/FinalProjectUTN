@@ -10,7 +10,6 @@ function PC() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de PC"
@@ -18,7 +17,6 @@ function PC() {
     setGameList={setGameList}
     url={fetchPCGames}
     />
-    <Footer/>
     </>
     )
 }

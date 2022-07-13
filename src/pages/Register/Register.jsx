@@ -10,13 +10,11 @@ import './register.css'
 function Register () {
     return (
         <>
-        <NavBar/>
         <Container>
         <h2 className='title'>Registrate</h2>
         <Divider/>
         <RegisterForm/>
         </Container>
-        <Footer/>
         </>
     )
 }

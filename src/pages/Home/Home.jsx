@@ -13,7 +13,6 @@ function Home() {
 
     return (
     <>
-    <NavBar/> 
     <ControlledCarousel/>
     <Divider/>
     <CardsList 
@@ -22,7 +21,6 @@ function Home() {
     setGameList={setGameList}
     url={popularGames}
     />
-    <Footer/>
     </>
     )
 }

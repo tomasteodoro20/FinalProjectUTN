@@ -8,13 +8,11 @@ import "./login.css"
 function Login () {
     return (
         <>
-        <NavBar/>
         <Container>
         <h2 className='title'>Iniciar sesión</h2>
         <Divider/>
         <LoginForm/>
         </Container>
-        <Footer/>
         </>
     )
 }

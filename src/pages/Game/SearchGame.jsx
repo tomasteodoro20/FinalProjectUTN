@@ -12,14 +12,12 @@ function SearchGame () {
 
     return (
         <>
-        <NavBar/>
         <CardsList 
         title="Se encontraron ..."
         gameList={gameList} 
         setGameList={setGameList}
         url={url}
         />
-        <Footer/>
         </>
     )
 }

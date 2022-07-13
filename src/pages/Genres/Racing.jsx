@@ -10,7 +10,6 @@ function Racing() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de carreras"
@@ -18,7 +17,6 @@ function Racing() {
     setGameList={setGameList}
     url={fetchRacingGames}
     />
-    <Footer/>
     </>
     )
 }

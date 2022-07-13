@@ -10,7 +10,6 @@ function Nintendo() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de Nintendo"
@@ -18,7 +17,6 @@ function Nintendo() {
     setGameList={setGameList}
     url={fetchNintendoGames}
     />
-    <Footer/>
     </>
     )
 }

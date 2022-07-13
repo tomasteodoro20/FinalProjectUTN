@@ -18,11 +18,14 @@ import Wishlist from './pages/Wishlist/Wishlist';
 import SearchGame from './pages/Game/SearchGame';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import NavBar from './components/navbar/NavBar';
+import Footer from './components/footer/Footer';
 
 function App() { 
 
   return (
     <BrowserRouter>
+    <NavBar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/Home' element={<Home/>}></Route>
@@ -44,7 +47,9 @@ function App() {
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
+
   );
 }
 

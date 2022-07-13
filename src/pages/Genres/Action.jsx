@@ -10,7 +10,6 @@ function Action() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de acción"
@@ -18,7 +17,6 @@ function Action() {
     setGameList={setGameList}
     url={fetchActionGames}
     />
-    <Footer/>
     </>
     )
 }

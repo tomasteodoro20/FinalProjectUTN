@@ -10,7 +10,6 @@ function Strategy() {
 
     return (
     <>
-    <NavBar/>
     <Divider/>
     <CardsList 
     title="Juegos de estrategia"
@@ -18,7 +17,6 @@ function Strategy() {
     setGameList={setGameList}
     url={fetchStrategyGames}
     />
-    <Footer/>
     </>
     )
 }

@@ -10,13 +10,11 @@ function Wishlist () {
 
     return (
         <>
-        <NavBar/>
         <h2 className='title-style'>Lista de deseados ❤</h2>
         <Divider/>
         <Container>
             <WishlistList/>
         </Container>
-        <Footer/>
         </>
     )
 }

@@ -14,7 +14,6 @@ function MyProfile () {
 
     return (
     <>
-    <NavBar/>
     <div className='flex-style'>
     <h2 className='title-style'>Mi Perfil</h2>
     <button className='delete-profile-btn'>Eliminar cuenta</button>
@@ -29,7 +28,6 @@ function MyProfile () {
             <p>Nombre: </p> 
             <p>Apellido: </p>
             <p>E-mail: </p>
-            <p>Fecha de nacimiento: </p>
         </Col>
         <Col className='d-flex align-items-center'>
             <WishlistButton/>
@@ -42,7 +40,6 @@ function MyProfile () {
     setGameList={setGameList}
     url={latestGames}
     />
-    <Footer/>
     </>
     )
 }
