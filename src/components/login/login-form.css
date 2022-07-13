@@ -1,0 +1,28 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin: 20px;
+}
+.custom-btn {
+    display: block;
+    background: #330D71 !important;
+    color: #fff;
+    border: 2px solid #330D71 !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+.error-color{
+    color: tomato;
+}
+
+.custom-btn:hover {
+    color: #fff !important;
+    background-color: #240a4e !important;  
+}
