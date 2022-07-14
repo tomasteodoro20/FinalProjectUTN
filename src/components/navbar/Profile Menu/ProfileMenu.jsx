@@ -19,7 +19,12 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   
   function ProfileMenu () {
 
-    const {isLogged} = useUser()
+    const {isLogged, logout} = useUser()
+
+    const handleClick = e => {
+      e.preventDefault()
+      logout()
+    }
 
  return(
     <>
@@ -35,7 +40,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <Dropdown.Divider/>
         <Dropdown.Item className='link-style' href='/Wishlist'>Eliminar cuenta</Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item className='link-style' href='/Wishlist'>Cerrar sesión</Dropdown.Item>
+        <Dropdown.Item className='link-style' href='/Home' onClick={handleClick}>Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
       : <Dropdown.Menu>
         <Dropdown.Item className='link-style' href="/Register">Registrarse</Dropdown.Item>

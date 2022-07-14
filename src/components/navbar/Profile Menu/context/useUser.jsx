@@ -8,8 +8,13 @@ export default function useUser () {
         setPassword('test')
     }, [setPassword])
 
+    const logout = useCallback(() => (
+        setPassword(null)
+    ), [setPassword])
+
     return {
         isLogged: Boolean(password),
-        login 
+        login, 
+        logout
     }
 }
