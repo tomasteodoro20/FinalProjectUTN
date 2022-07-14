@@ -1,8 +1,6 @@
 import React from 'react';
-import NavBar from '../../components/navbar/NavBar';
-import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
-import WishlistList from './WishlistList';
+import WishlistList from '../../components/wishlist/WishlistList';
 import { Container } from 'react-bootstrap';
 import './wishlist.css';
 
