@@ -8,7 +8,12 @@ const UserSchema = new Schema({
     username: {type: String, required: true},    
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    wishlist: {type: Array}
+    wishlist: [
+        {name: String,
+        background_image: String,
+        description: String,
+        slug: String
+    }]
 }
 )
 

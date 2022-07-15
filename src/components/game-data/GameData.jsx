@@ -9,6 +9,7 @@ import GameConsoles from "./GameConsoles";
 import GameStores from "./GameStores";
 import WishlistBtnAdd from "../wishlist/WishlistAdd";
 import LoadingGif from "../loading/LoadingGif";
+import axios from "axios";
 
 function GameData () {
     const { slug } = useParams();
@@ -19,6 +20,9 @@ function GameData () {
     }-rating`;
     const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`;
 
+    const [success, setSuccess] = useState(null);
+    const [error, setError ] = useState(null);
+
     
     const fetchDetails = async () => {
         const response = await fetch(url);
@@ -27,13 +31,36 @@ function GameData () {
             setLoading(false);
         };
         
-        useEffect(() => {
-            fetchDetails();
-        }, []);
+    useEffect(() => {
+        fetchDetails();
+    }, []);
+
+    const handleClick = async () => {        
+        const {name, background_image, description, slug} = gameDetails;
+
+        const listedGame = {wishlist: [
+            {name: name,
+            background_image: background_image,
+            description: description,
+            slug: slug}
+        ]};
         
-        if (loading) {
-            return <LoadingGif/>
-        }
+        console.log(listedGame)
+        const response = await axios.post("http://localhost:5000/wishlist", listedGame)
+        .catch((err) => {
+        if(err && err.response)
+            // setError(err.response.name.message)
+            setSuccess(null);
+        })    
+        if (response && response.data) {
+            setError(null);
+            // setSuccess(response.name.message);
+        }        
+    }
+    
+    if (loading) {
+        return <LoadingGif/>
+    }
 
     return (
     <>
@@ -58,8 +85,15 @@ function GameData () {
             <GameStores slug={slug}/>
         </div>
         <div className="game-extra">
-            <GameScreenshots background_image={gameDetails.background_image}/>        
-            <WishlistBtnAdd />
+            <GameScreenshots background_image={gameDetails.background_image}/>   
+            
+            <button className='custom-btn' type="submit" onClick={handleClick}>
+            Añadir a la Lista de Deseados ❤
+            </button>     
+            
+            {!error && <span className="success-message">{success ? success : ""}</span>}
+            {!success && <span className="error-message">{error ? error : ""}</span>}
+            {/* <WishlistBtnAdd onSubmit={handleSubmit}/> */}
         </div>
     </div> 
     </>
