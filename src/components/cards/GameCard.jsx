@@ -20,8 +20,7 @@ const GameCard = (game) => {
             <div className="game-overview">
                 <h3>{game.name}</h3>    
                 <p>Fecha de lanzamiento: {game.released}</p>
-                <p>Rating: <span className={ratingStyle}>{game.rating}</span>
-                </p>                
+                <p>Rating: <span className={ratingStyle}>{game.rating}</span></p>
             </div>
         </div>
     )
