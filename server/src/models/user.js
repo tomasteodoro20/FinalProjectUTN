@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         {name: String,
         background_image: String,
         description: String,
-        slug: String
+        slug: String, 
     }]
 }
 )

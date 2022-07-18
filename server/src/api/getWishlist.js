@@ -17,7 +17,7 @@ router.get("/userWishlist", async (req, res) => {
 //     return res.status(409).json({ message: "El email ingresado ya se encuentra registrado" });
 //   }
 
-  const userWishlist = await User.find({"email" : "Daron_Kozey@gmail.com"}, {wishlist: 1})
+  const userWishlist = await User.find({"email" : "melani@melani.com"}, {wishlist: 1})
   .catch((err) => {
     console.log("Error: ", err);
     res.status(500).json({ message: "No hay contenido" });

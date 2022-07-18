@@ -34,27 +34,79 @@ function GameData () {
         fetchDetails();
     }, []);
 
-    const handleClick = async () => {        
-        const {name, background_image, description, slug} = gameDetails;
 
-        const listedGame = {wishlist: [
-            {name: name,
-            background_image: background_image,
-            description: description,
-            slug: slug}
-        ]};
+    const checkIfExists = async () => {
+        // const {name, background_image, description, slug} = gameDetails;
         
-        console.log(listedGame)
-        const response = await axios.post("http://localhost:5000/wishlist", listedGame)
-        .catch((err) => {
-            if(err && err.response)
-            setError(err.response.data.message)            
-        })    
-        if (response && response.data) {            
-            setSuccess(response.data.message);
-        }        
-        console.log(response.data)
+        // const listedGame = {wishlist: [
+        //     {name: name,
+        //     background_image: background_image,
+        //     description: description,
+        //     slug: slug}
+        // ]};
+
+        const response = await fetch("http://localhost:5000/userWishlist");
+        const wishlist = await response.json();
+        const searchWishlist = wishlist[0].wishlist
+        const filteredWishlist = wishlist[0].wishlist.some((game) => game.slug === gameDetails.slug)
+        // console.log(filteredWishlist)
+
+
+        if (filteredWishlist) {
+            alert("El juego ya se encuentra en su lista de deseados")
+        }
+
+        if (!filteredWishlist) {
+            const {name, background_image, description, slug} = gameDetails;
+            
+            const listedGame = {wishlist: [
+                {name: name,
+                background_image: background_image,
+                description: description,
+                slug: slug}
+            ]};
+            
+            // console.log(listedGame)
+            const response = await axios.post("http://localhost:5000/wishlist", listedGame)
+            .catch((err) => {
+                if(err && err.response)
+                setError(err.response.data.message)            
+            })    
+            if (response && response.data) {            
+                setSuccess(response.data.message);
+            }        
+
+        };           
+
     }
+
+    const handleClick = async () => {
+        checkIfExists()
+        // if (checkIfExists) {
+        //     alert("El juego ya fue ingresado")
+        // }
+        // else {
+        //     const {name, background_image, description, slug} = gameDetails;
+            
+        //     const listedGame = {wishlist: [
+        //         {name: name,
+        //         background_image: background_image,
+        //         description: description,
+        //         slug: slug}
+        //     ]};
+            
+        //     console.log(listedGame)
+        //     const response = await axios.post("http://localhost:5000/wishlist", listedGame)
+        //     .catch((err) => {
+        //         if(err && err.response)
+        //         setError(err.response.data.message)            
+        //     })    
+        //     if (response && response.data) {            
+        //         setSuccess(response.data.message);
+        //     }        
+
+        }
+    // }
     
     if (loading) {
         return <LoadingGif/>
@@ -88,11 +140,10 @@ function GameData () {
             <button className='custom-btn' type="submit" onClick={handleClick}>
             Añadir a la Lista de Deseados ❤
             </button>     
-            
+            <h2 className="success-message">{success}</h2>
+            {!success && <span className="error-message">{error ? error : ""}</span>}            
         </div>
             {/* <WishlistBtnAdd onSubmit={handleSubmit}/> */}
-            <h2 className="success-message">{success}</h2>
-            {!success && <span className="error-message">{error ? error : ""}</span>}
     </div> 
     </>
     }   
