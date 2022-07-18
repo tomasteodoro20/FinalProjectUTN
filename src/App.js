@@ -20,10 +20,12 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
+import { UserContextProvider } from './components/navbar/Profile Menu/context/UserContext';
 
 function App() { 
 
   return (
+  <UserContextProvider>
     <BrowserRouter>
     <NavBar/>
       <Routes>
@@ -49,6 +51,7 @@ function App() {
       </Routes>
       <Footer/>
     </BrowserRouter>
+  </UserContextProvider>
 
   );
 }
