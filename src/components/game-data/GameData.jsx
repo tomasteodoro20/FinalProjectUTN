@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import GameGenres from "./GameGenres";
 import GameConsoles from "./GameConsoles";
 import GameStores from "./GameStores";
-import WishlistBtnAdd from "../wishlist/WishlistAdd";
 import LoadingGif from "../loading/LoadingGif";
 import axios from "axios";
 
@@ -48,14 +47,13 @@ function GameData () {
         console.log(listedGame)
         const response = await axios.post("http://localhost:5000/wishlist", listedGame)
         .catch((err) => {
-        if(err && err.response)
-            // setError(err.response.name.message)
-            setSuccess(null);
+            if(err && err.response)
+            setError(err.response.data.message)            
         })    
-        if (response && response.data) {
-            setError(null);
-            // setSuccess(response.name.message);
+        if (response && response.data) {            
+            setSuccess(response.data.message);
         }        
+        console.log(response.data)
     }
     
     if (loading) {
@@ -91,10 +89,10 @@ function GameData () {
             Añadir a la Lista de Deseados ❤
             </button>     
             
-            {!error && <span className="success-message">{success ? success : ""}</span>}
-            {!success && <span className="error-message">{error ? error : ""}</span>}
-            {/* <WishlistBtnAdd onSubmit={handleSubmit}/> */}
         </div>
+            {/* <WishlistBtnAdd onSubmit={handleSubmit}/> */}
+            <h2 className="success-message">{success}</h2>
+            {!success && <span className="error-message">{error ? error : ""}</span>}
     </div> 
     </>
     }   

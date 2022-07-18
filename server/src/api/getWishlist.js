@@ -3,7 +3,7 @@ const User = require("../models/user");
 
 const router = express.Router();
 
-router.post("/wishlist", async (req, res) => {
+router.get("/userWishlist", async (req, res) => {
 //   const { name, background_image, description, slug } = req.body;
 //   const wishlist = {name, background_image, description, slug};
 
@@ -17,14 +17,14 @@ router.post("/wishlist", async (req, res) => {
 //     return res.status(409).json({ message: "El email ingresado ya se encuentra registrado" });
 //   }
 
-  const newListedGame = await User.updateOne({"email" : "Daron_Kozey@gmail.com" , $push: req.body
-    }).catch((err) => {
+  const userWishlist = await User.find({"email" : "Daron_Kozey@gmail.com"}, {wishlist: 1})
+  .catch((err) => {
     console.log("Error: ", err);
-    res.status(500).json({ message: "No se pudo agregar el juego" });
+    res.status(500).json({ message: "No hay contenido" });
     });
 
-    if (newListedGame)
-    { return res.json({ message: "El juego fue agregado a tu lista de deseados" })};;
+    if (userWishlist)
+    res.json(userWishlist);;
 //   const savedWishlist = await newListedGame.update().catch((err) => {
 //     console.log("Error: ", err);
 //     res.status(500).json({ message: "No se pudo agregar el juego" });

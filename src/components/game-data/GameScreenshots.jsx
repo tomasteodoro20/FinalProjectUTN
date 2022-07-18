@@ -16,13 +16,15 @@ const GameScreenshots = ({background_image}) => {
     },[setGameScreenshots]);
 
     return (
+        
         <div className="game-screenshots">
-        {gameScreenshots.length === 0 && <img className="extra-screenshot" src={background_image} alt="Screenshot"/>}
-        {gameScreenshots.slice(0, 3).map((game) => (
+        {gameScreenshots.length <= 2 && <img className="extra-screenshot" src={background_image} alt="Screenshot"/>}
+        {gameScreenshots.length >= 2 && gameScreenshots.slice(0, 3).map((game) => (
             <img className="screenshots-img" key={game.id} src={game.image} alt="Screenshot" />
         )
         )}          
         </div>
+        
     )
 }
 
