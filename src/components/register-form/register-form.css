@@ -28,6 +28,7 @@
     color: rgb(43, 128, 43);
     font-size: 1.2em;
     font-weight: bold;
+    margin: .5em;
 }
 
 .error-message{

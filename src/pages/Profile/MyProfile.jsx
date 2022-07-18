@@ -1,7 +1,5 @@
 import {React, useState} from 'react';
 import {Image, Col, Row} from 'react-bootstrap';
-import NavBar from '../../components/navbar/NavBar';
-import Footer from '../../components/footer/Footer';
 import Divider from '../../components/divider/Divider';
 import './profile.css'
 import WishlistButton from '../../components/wishlist/WishlistButton';
