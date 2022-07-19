@@ -3,11 +3,11 @@ import React, {useState} from "react";
 const Context = React.createContext({})
 
 export function UserContextProvider ({children}) {
-    const [password, setPassword] = useState(
-        () => window.sessionStorage.getItem('password')
+    const [email, setEmail] = useState(
+        () => window.sessionStorage.getItem('email')
         )
 
-    return <Context.Provider value={{password, setPassword}}>
+    return <Context.Provider value={{email, setEmail}}>
         {children}
     </Context.Provider>
 }

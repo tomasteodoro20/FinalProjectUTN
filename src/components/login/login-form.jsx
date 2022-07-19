@@ -45,7 +45,7 @@ const onSubmit = async (values) =>{
     if(response && response.data){
       setSuccess(response.data.message);
       formik.resetForm();
-      login();
+      login(values.email);
       // setTimeout(() => {
       //   // navigate("/home", { replace: true });
       // }, 2000);      
