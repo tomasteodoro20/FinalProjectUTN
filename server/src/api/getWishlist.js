@@ -3,8 +3,8 @@ const User = require("../models/user");
 
 const router = express.Router();
 
-router.get("/userWishlist", async (req, res) => {
-//   const { name, background_image, description, slug } = req.body;
+router.get("/userWishlist/:email", async (req, res) => {
+  const { email } = req.params;  
 //   const wishlist = {name, background_image, description, slug};
 
 //   const alreadyExistsUser = await User.findOne({ wishlist }).catch(
@@ -16,8 +16,9 @@ router.get("/userWishlist", async (req, res) => {
 //   if (alreadyExistsUser) {
 //     return res.status(409).json({ message: "El email ingresado ya se encuentra registrado" });
 //   }
+console.log(email)
 
-  const userWishlist = await User.find({"email" : "melani@melani.com"}, {wishlist: 1})
+  const userWishlist = await User.find({"email" : email}, {wishlist: 1})
   .catch((err) => {
     console.log("Error: ", err);
     res.status(500).json({ message: "No hay contenido" });

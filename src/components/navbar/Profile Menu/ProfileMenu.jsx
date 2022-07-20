@@ -2,6 +2,7 @@ import React from 'react'
 import {Dropdown} from 'react-bootstrap'
 import '../navbar.styles.css'
 import useUser from './context/useUser';
+import { useNavigate } from "react-router-dom";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
@@ -18,12 +19,12 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   ));
   
   function ProfileMenu () {
-
+    let navigate = useNavigate();
     const {isLogged, logout} = useUser()
 
-    const handleClick = e => {
-      e.preventDefault()
+    const handleClick = () => {
       logout()
+      navigate("/Home")
     }
 
  return(

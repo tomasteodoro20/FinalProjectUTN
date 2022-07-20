@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import './game-data.css';
 import GameScreenshots from "./GameScreenshots";
 import Divider from "../divider/Divider";
@@ -9,6 +9,7 @@ import GameConsoles from "./GameConsoles";
 import GameStores from "./GameStores";
 import LoadingGif from "../loading/LoadingGif";
 import axios from "axios";
+import Context from "../navbar/Profile Menu/context/UserContext";
 
 function GameData () {
     const { slug } = useParams();
@@ -21,9 +22,12 @@ function GameData () {
 
     const [success, setSuccess] = useState(null);
     const [error, setError ] = useState(null);
+    const {email, setEmail} = useContext(Context);
 
     
     const fetchDetails = async () => {
+        setEmail(email);
+        console.log(email)
         const response = await fetch(url);
             const data = await response.json();
             setGameDetails(data);
@@ -45,7 +49,7 @@ function GameData () {
         //     slug: slug}
         // ]};
 
-        const response = await fetch("http://localhost:5000/userWishlist");
+        const response = await fetch(`http://localhost:5000/userWishlist/${email}`);
         const wishlist = await response.json();
         const searchWishlist = wishlist[0].wishlist
         const filteredWishlist = wishlist[0].wishlist.some((game) => game.slug === gameDetails.slug)
@@ -67,7 +71,7 @@ function GameData () {
             ]};
             
             // console.log(listedGame)
-            const response = await axios.post("http://localhost:5000/wishlist", listedGame)
+            const response = await axios.post(`http://localhost:5000/wishlist/${email}`, listedGame)
             .catch((err) => {
                 if(err && err.response)
                 setError(err.response.data.message)            

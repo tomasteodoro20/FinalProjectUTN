@@ -24,8 +24,7 @@ function ControlledCarousel() {
                 <Card className="card-carousel">
                 <Card.Body>                
                   <Card.Title as="h4">{videoObj.title}</Card.Title>
-                  <Card.Text>{videoObj.description}
-                  </Card.Text>
+                  <Card.Text>{videoObj.description.slice(0,250)}...</Card.Text>
                   <Link to={videoObj.slug} className="link-button">Ver más</Link>
                 </Card.Body>
                 </Card>
