@@ -27,19 +27,7 @@ function GameConsoles({slug}) {
                     </span>
                 )}
             )}
-            {/* {gameConsoles && gameConsoles.map((game) => {
-                return (
-                    <span key={game.platform.id}>                        
-                        {game.platform.id === 1 ? <FaWindows key={game.platform.id}/>                             
-                        : game.platform.id === 2 ? <FaPlaystation key={game.platform.id}/> 
-                        : game.platform.id === 3 ? <FaXbox key={game.platform.id}/> 
-                        : game.platform.id === 7 ? <SiNintendoswitch key={game.platform.id}/> 
-                        : null}
-                    </span>
-                )}
-            )} */}
 
-            {/* game.platform.id === 1 ? <FaWindows/> : null */}
         </div>
     )
 }

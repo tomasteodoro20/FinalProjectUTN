@@ -21,16 +21,8 @@ function SearchBar() {
     targetRef.current.value = "";
   }, [showSearchInput]);
 
-//   function handleKeyPress(e) {
-//     const key = e.key;
-//     if (key === "Enter") { 
-//     filter && navigate(`/SearchGame:${filter}`);
-//     // window.location.reload(false)
-// }
-// }
   const handleSubmit = (e) => {
-    filter ? navigate(`/SearchGame:${filter}`) : e.preventDefault();    
-    // window.location.reload(false)
+    filter ? navigate(`/SearchGame:${filter}`) : e.preventDefault(); 
   }
 
   return (
@@ -42,8 +34,7 @@ function SearchBar() {
       hover={showSearchInput}      
       onSubmit={handleSubmit}
     >
-      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)} />
-      {/* onKeyPress={(e) => handleKeyPress(e)} */}
+      <SearchInput ref={targetRef} showSearchInput={showSearchInput} onChange={(e) => setFilter(e.target.value)} />      
       {showSearchInput ? <SearchButton>➜</SearchButton> : <IconMagnifyingGlass />}
     </Container>
   );

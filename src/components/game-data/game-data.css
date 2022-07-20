@@ -33,13 +33,13 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin: 3em;
+    margin: 2em;
     gap: 2em;
 }
 
 .game-details{
     color:white;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 @media (max-width: 1294px){
@@ -58,7 +58,13 @@
     display: flex;    
     flex-wrap: wrap;    
     justify-content: center;
-    max-width: 600px; 
+    max-width: 500px; 
+}
+
+.custom-btn{
+    display: inline-block;   
+    max-width: inherit;  
+    margin: auto;
 }
 
 .game-screenshots{ 

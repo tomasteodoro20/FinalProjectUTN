@@ -10,6 +10,7 @@ import GameStores from "./GameStores";
 import LoadingGif from "../loading/LoadingGif";
 import axios from "axios";
 import Context from "../navbar/Profile Menu/context/UserContext";
+import useUser from "../navbar/Profile Menu/context/useUser";
 
 function GameData () {
     const { slug } = useParams();
@@ -21,13 +22,16 @@ function GameData () {
     const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`;
 
     const [success, setSuccess] = useState(null);
-    const [error, setError ] = useState(null);
+    const [error, setError ] = useState(null);    
+    const {isLogged} = useUser();
     const {email, setEmail} = useContext(Context);
 
     
     const fetchDetails = async () => {
-        setEmail(email);
-        console.log(email)
+        if (isLogged) {
+            setEmail(email);
+            console.log(email)
+        }
         const response = await fetch(url);
             const data = await response.json();
             setGameDetails(data);
@@ -40,20 +44,9 @@ function GameData () {
 
 
     const checkIfExists = async () => {
-        // const {name, background_image, description, slug} = gameDetails;
-        
-        // const listedGame = {wishlist: [
-        //     {name: name,
-        //     background_image: background_image,
-        //     description: description,
-        //     slug: slug}
-        // ]};
-
         const response = await fetch(`http://localhost:5000/userWishlist/${email}`);
         const wishlist = await response.json();
-        const searchWishlist = wishlist[0].wishlist
         const filteredWishlist = wishlist[0].wishlist.some((game) => game.slug === gameDetails.slug)
-        // console.log(filteredWishlist)
 
 
         if (filteredWishlist) {
@@ -69,8 +62,7 @@ function GameData () {
                 description: description,
                 slug: slug}
             ]};
-            
-            // console.log(listedGame)
+
             const response = await axios.post(`http://localhost:5000/wishlist/${email}`, listedGame)
             .catch((err) => {
                 if(err && err.response)
@@ -84,33 +76,7 @@ function GameData () {
 
     }
 
-    const handleClick = async () => {
-        checkIfExists()
-        // if (checkIfExists) {
-        //     alert("El juego ya fue ingresado")
-        // }
-        // else {
-        //     const {name, background_image, description, slug} = gameDetails;
-            
-        //     const listedGame = {wishlist: [
-        //         {name: name,
-        //         background_image: background_image,
-        //         description: description,
-        //         slug: slug}
-        //     ]};
-            
-        //     console.log(listedGame)
-        //     const response = await axios.post("http://localhost:5000/wishlist", listedGame)
-        //     .catch((err) => {
-        //         if(err && err.response)
-        //         setError(err.response.data.message)            
-        //     })    
-        //     if (response && response.data) {            
-        //         setSuccess(response.data.message);
-        //     }        
-
-        }
-    // }
+    const handleClick = () => checkIfExists()
     
     if (loading) {
         return <LoadingGif/>
@@ -118,8 +84,8 @@ function GameData () {
 
     return (
     <>
-           {gameDetails.detail === "Not found." ? <p className="no-results">La página no se encuentra disponible</p> : 
-           <>
+    {gameDetails.detail === "Not found." ? <p className="no-results">La página no se encuentra disponible</p> : 
+        <>
     <div className="game-header">
         <h2>{gameDetails.name}</h2>            
         <span className={ratingStyle}>Rating: {gameDetails.rating}</span>
@@ -140,14 +106,14 @@ function GameData () {
         </div>
         <div className="game-extra">
             <GameScreenshots background_image={gameDetails.background_image}/>   
-            
+            { isLogged && 
             <button className='custom-btn' type="submit" onClick={handleClick}>
             Añadir a la Lista de Deseados ❤
-            </button>     
+            </button>
+            }
             <h2 className="success-message">{success}</h2>
             {!success && <span className="error-message">{error ? error : ""}</span>}            
         </div>
-            {/* <WishlistBtnAdd onSubmit={handleSubmit}/> */}
     </div> 
     </>
     }   
