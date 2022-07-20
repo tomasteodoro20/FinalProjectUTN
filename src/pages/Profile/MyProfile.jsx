@@ -7,6 +7,7 @@ import CardsList from  '../../components/cards/CardsList'
 import { latestGames} from "../../constants";
 import ProfileGif from '../../components/my-profile/profile-gif';
 import ProfileData from '../../components/my-profile/profile-data';
+import DeleteAccountBtn from '../../components/my-profile/delete-account-btn';
 
 function MyProfile () {
 
@@ -14,10 +15,14 @@ function MyProfile () {
     
     return (
     <>
-    <div className='flex-style'>
-    <h2 className='title-style'>Mi Perfil</h2>
-    <button className='delete-profile-btn'>Eliminar cuenta</button>
-    </div>
+    <Row>
+        <Col className='flex-style'>
+            <h2 className='title-style'>Mi Perfil</h2>
+        </Col>
+        <Col className='d-flex align-items-center'>
+            <DeleteAccountBtn/>
+        </Col>
+    </Row>
     <Divider/>
     <Row>
         <Col>

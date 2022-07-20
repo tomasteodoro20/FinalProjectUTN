@@ -9,3 +9,19 @@
     color: #fff;
     margin-top: 4rem;
 }
+
+.delete-account-btn {
+    background: #330D71;
+    color: #fff;
+    border: 2px solid #330D71;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+
+  .delete-account-btn:hover{
+    color: #ffff;
+    background-color: #240a4e;
+  }
