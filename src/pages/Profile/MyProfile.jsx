@@ -1,33 +1,17 @@
-import {React, useState, useEffect} from 'react';
-import {Image, Col, Row} from 'react-bootstrap';
+import {React, useState, useEffect, useContext} from 'react';
+import {Col, Row} from 'react-bootstrap';
 import Divider from '../../components/divider/Divider';
 import './profile.css'
 import WishlistButton from '../../components/wishlist/WishlistButton';
 import CardsList from  '../../components/cards/CardsList'
 import { latestGames} from "../../constants";
-import axios from 'axios';
-
-const getData = axios.create({
-    baseURL: "http://localhost:5000/login" 
-  });
+import ProfileGif from '../../components/my-profile/profile-gif';
+import ProfileData from '../../components/my-profile/profile-data';
 
 function MyProfile () {
 
     const [gameList, setGameList] = useState([]);
-    const [values, setValues] = useState({
-        "username":"",
-        "firstname":"",
-        "lastname":"",
-        "email":"",    
-    });
-
-    useEffect(() => {
-        getData.get(`http://localhost:5000/login`, values).then((values) => {
-           setValues(values.data);
-        });
-     }, [setValues]);
- 
-
+    
     return (
     <>
     <div className='flex-style'>
@@ -37,13 +21,10 @@ function MyProfile () {
     <Divider/>
     <Row>
         <Col>
-            <Image src='logo.png' roundedCircle></Image>
+            <ProfileGif/>
         </Col>
-        <Col className='text-style'>
-            <p>Usuario: {values.username}.</p>
-            <p>Nombre: {values.firstname}.</p> 
-            <p>Apellido: {values.lastname}.</p>
-            <p>E-mail: {values.email}.</p>
+        <Col>
+            <ProfileData/>
         </Col>
         <Col className='d-flex align-items-center'>
             <WishlistButton/>
