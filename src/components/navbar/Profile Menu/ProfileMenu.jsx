@@ -39,8 +39,6 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <Dropdown.Divider/>
         <Dropdown.Item className='link-style' href='/Wishlist'>Lista de Deseados</Dropdown.Item>
         <Dropdown.Divider/>
-        <Dropdown.Item className='link-style' href='/Wishlist'>Eliminar cuenta</Dropdown.Item>
-        <Dropdown.Divider/>
         <Dropdown.Item className='link-style' href='/Home' onClick={handleClick}>Cerrar sesión</Dropdown.Item>
       </Dropdown.Menu>
       : <Dropdown.Menu>
