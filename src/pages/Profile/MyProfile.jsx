@@ -16,10 +16,10 @@ function MyProfile () {
     return (
     <>
     <Row>
-        <Col className='flex-style'>
+        <Col className='flex-style' sm={8}>
             <h2 className='title-style'>Mi Perfil</h2>
         </Col>
-        <Col className='d-flex align-items-center'>
+        <Col className='d-flex align-items-center' sm={4}>
             <DeleteAccountBtn/>
         </Col>
     </Row>
