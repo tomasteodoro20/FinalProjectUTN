@@ -8,22 +8,6 @@ import useUser from '../navbar/Profile Menu/context/useUser';
 const DeleteAccountBtn = () => {
     const {email, setEmail} = useContext(Context);
     const { logout } = useUser();
-    // const [values, setValues] = useState({
-    //     "_id": "",
-    //     "username":"",
-    //     "firstname":"",
-    //     "lastname":"",
-    //     "email":"",    
-    //     "password": "",
-    //     "wishlist": [],
-    //     "__v": "0",
-    // });
-    
-    // const onSubmit = async () => {
-        //     const response = await fetch(`http://localhost:5000/deleteAccount/prueba@gmail.com`);
-        //     const data = await response.json();
-        //     setValues(data);
-        //     };
         
         const onSubmit = async () => {
             setEmail(email)
@@ -31,14 +15,8 @@ const DeleteAccountBtn = () => {
             .then(() => {
                 alert("La cuenta ha sido eliminada con éxito")
                 logout()
-                // setValues(null);
             })
         }
-        
-    // useEffect(() => {
-    //     onSubmit();
-    // }, []);
-
     return (
         <>
             <Link to="/Home">

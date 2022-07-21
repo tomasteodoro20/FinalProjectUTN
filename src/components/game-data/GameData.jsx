@@ -40,20 +40,11 @@ function GameData () {
 
 
     const checkIfExists = async () => {
-        // const {name, background_image, description, slug} = gameDetails;
-        
-        // const listedGame = {wishlist: [
-        //     {name: name,
-        //     background_image: background_image,
-        //     description: description,
-        //     slug: slug}
-        // ]};
 
         const response = await fetch(`http://localhost:5000/userWishlist/${email}`);
         const wishlist = await response.json();
         const searchWishlist = wishlist[0].wishlist
         const filteredWishlist = wishlist[0].wishlist.some((game) => game.slug === gameDetails.slug)
-        // console.log(filteredWishlist)
 
 
         if (filteredWishlist) {
@@ -70,7 +61,6 @@ function GameData () {
                 slug: slug}
             ]};
             
-            // console.log(listedGame)
             const response = await axios.post(`http://localhost:5000/wishlist/${email}`, listedGame)
             .catch((err) => {
                 if(err && err.response)
@@ -86,31 +76,7 @@ function GameData () {
 
     const handleClick = async () => {
         checkIfExists()
-        // if (checkIfExists) {
-        //     alert("El juego ya fue ingresado")
-        // }
-        // else {
-        //     const {name, background_image, description, slug} = gameDetails;
-            
-        //     const listedGame = {wishlist: [
-        //         {name: name,
-        //         background_image: background_image,
-        //         description: description,
-        //         slug: slug}
-        //     ]};
-            
-        //     console.log(listedGame)
-        //     const response = await axios.post("http://localhost:5000/wishlist", listedGame)
-        //     .catch((err) => {
-        //         if(err && err.response)
-        //         setError(err.response.data.message)            
-        //     })    
-        //     if (response && response.data) {            
-        //         setSuccess(response.data.message);
-        //     }        
-
         }
-    // }
     
     if (loading) {
         return <LoadingGif/>
