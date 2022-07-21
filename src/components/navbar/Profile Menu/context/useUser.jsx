@@ -1,5 +1,4 @@
 import { useCallback, useContext } from "react";
-import loginService from "../../../login/service/login-service";
 import Context from "./UserContext";
 
 export default function useUser () {

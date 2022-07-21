@@ -26,9 +26,10 @@ const DeleteAccountBtn = () => {
         //     };
         
         const onSubmit = async () => {
-            setEmail(email);
+            setEmail(email)
             await axios.delete(`http://localhost:5000/deleteAccount/${email}`)
-            .then(response => {
+            .then(() => {
+                alert("La cuenta ha sido eliminada con éxito")
                 logout()
                 // setValues(null);
             })
@@ -41,7 +42,7 @@ const DeleteAccountBtn = () => {
     return (
         <>
             <Link to="/Home">
-                <button className='delete-account-btn' type='submit' value="Delete" onClick={onSubmit}>Eliminar cuenta 🗑 </button>
+                <button className='delete-account-btn' type='submit' onClick={onSubmit}>Eliminar cuenta 🗑 </button>
             </Link>
         </>
     )
