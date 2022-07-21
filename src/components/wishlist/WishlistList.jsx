@@ -3,6 +3,7 @@ import "../../pages/Wishlist/wishlist.css"
 import { useState, useEffect, useContext } from "react";
 import Context from "../navbar/Profile Menu/context/UserContext";
 import useUser from "../navbar/Profile Menu/context/useUser";
+import axios from "axios";
 
 const WishlistList = () => {
     const [wishlist, setWishlist] = useState([{}]);
@@ -22,6 +23,16 @@ const WishlistList = () => {
         fetchDetails();
     }, []);
 
+    const handleDelete = async (game) =>{
+        console.log(game);
+        console.log(game.slug);
+        await axios.post(`http://localhost:5000/deleteWishlistItem/${email}/${game.slug}`, game)
+        .then(() => {
+            alert("El juego fue eliminado con éxito");
+            window.location.reload(false);
+    })
+    }
+
     return (   
         <>
         {!isLogged && <p className="no-results">Iniciá sesión para visualizar tu lista</p>}
@@ -34,7 +45,7 @@ const WishlistList = () => {
                     <h5 className="card-header">{game.name}</h5>
                     <a href={game.slug} className="card-body card-text">Más detalles</a>
                 </div>
-                <button className="wishlist-card-btn" type="button"><TiDeleteOutline/></button>
+                <button className="wishlist-card-btn" type="button" onClick={() => handleDelete(game)}><TiDeleteOutline/></button>
             </div>
             )
         }) : (isLogged && wishlist.length === 0) && <p className="no-results">Aún no agregaste ningún juego</p>}

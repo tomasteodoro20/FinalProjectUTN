@@ -9,7 +9,7 @@ const DeleteAccountBtn = () => {
     const {email, setEmail} = useContext(Context);
     const { logout } = useUser();
         
-        const onSubmit = async () => {
+        const handleClick = async () => {
             setEmail(email)
             await axios.delete(`http://localhost:5000/deleteAccount/${email}`)
             .then(() => {
@@ -20,7 +20,7 @@ const DeleteAccountBtn = () => {
     return (
         <>
             <Link to="/Home">
-                <button className='delete-account-btn' type='submit' onClick={onSubmit}>Eliminar cuenta 🗑 </button>
+                <button className='delete-account-btn' type='submit' onClick={handleClick}>Eliminar cuenta 🗑 </button>
             </Link>
         </>
     )

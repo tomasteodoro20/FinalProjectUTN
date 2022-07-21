@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Container, Col, Row} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import Divider from '../../components/divider/Divider';
 import './profile.css'
 import WishlistButton from '../../components/wishlist/WishlistButton';
