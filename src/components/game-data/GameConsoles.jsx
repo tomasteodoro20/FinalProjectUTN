@@ -27,7 +27,6 @@ function GameConsoles({slug}) {
                     </span>
                 )}
             )}
-
         </div>
     )
 }

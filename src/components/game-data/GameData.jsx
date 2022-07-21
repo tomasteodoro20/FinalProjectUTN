@@ -62,7 +62,6 @@ function GameData () {
                 description: description,
                 slug: slug}
             ]};
-
             const response = await axios.post(`http://localhost:5000/wishlist/${email}`, listedGame)
             .catch((err) => {
                 if(err && err.response)
