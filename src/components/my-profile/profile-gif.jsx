@@ -5,7 +5,7 @@ function ProfileGif () {
     const loadingGif = require("./sonic-gif.gif")
     return (
     <div>
-        <img className="gif-sonic-style" src={loadingGif} alt="Sonic esperando..."/>
+        <img className="gif-sonic-style mx-auto" src={loadingGif} alt="Sonic esperando..."/>
     </div>
     )
 };

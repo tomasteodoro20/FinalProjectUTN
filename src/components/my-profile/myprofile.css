@@ -1,13 +1,22 @@
 .gif-sonic-style {
     max-width: 90vw;
     height: 200px;
-    margin: 2rem;
+    margin: 1rem;
 }
 
-.text-style {
-    align-items: center;
+.profile-list {
+    display: flex;    
+    flex-direction: column;    
     color: #fff;
-    margin-top: 4rem;
+    margin-left: 1.5em;
+    list-style: none;
+    line-height: 2em;
+}
+
+.profile-data{
+  flex-wrap: wrap;
+  align-content: center;
+
 }
 
 .delete-account-btn {
@@ -24,4 +33,19 @@
   .delete-account-btn:hover{
     color: #ffff;
     background-color: #240a4e;
+  }
+
+  @media(max-width:700px) {
+    .gif-sonic-style {
+      height: 150px;
+  }
+  }
+
+  @media(max-width:520px) {
+    .gif-sonic-style {
+      display: none;
+  }
+    .profile-list{
+      margin-left: 0
+  }
   }

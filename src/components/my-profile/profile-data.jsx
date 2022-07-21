@@ -25,12 +25,12 @@ function ProfileData () {
 
     return (
         <>
-        <div className='text-style'>
-            <p>Usuario: {values.username}.</p>
-            <p>Nombre: {values.firstname}.</p> 
-            <p>Apellido: {values.lastname}.</p>
-            <p>E-mail: {values.email}.</p>
-        </div>
+        <ul className="profile-list my-auto">
+            <li>Usuario: {values.username}</li>
+            <li>Nombre: <span className="text-capitalize">{values.firstname}</span></li> 
+            <li>Apellido: <span className="text-capitalize">{values.lastname}</span></li>
+            <li>E-mail: {values.email}</li>
+        </ul>
         </>
     )
 }

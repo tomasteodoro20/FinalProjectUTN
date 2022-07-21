@@ -4,10 +4,8 @@
     border: 2px solid #330D71;
     border-radius: 3px;
     padding: 5px 10px;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    text-decoration: none;  
-    margin-right: 5rem;
+    text-transform: uppercase;    
+    text-decoration: none;      
 }
 
 .delete-profile-btn:hover {
@@ -15,10 +13,9 @@
     background-color: #240a4e;  
 }
 
-.title-style{
+.profile-title{
     color: #fff;
-    margin-top: 1rem;
-    margin-left: 5rem;
+    margin-top:.9em;
 }
 
 .flex-style {
