@@ -79,7 +79,7 @@ const formik = useFormik({
             {formik.touched.password && formik.errors.password ? 
             <span className="error-message">{formik.errors.password}</span> : ""}
             
-            <button className="custom-btn" type="submit" >Iniciar Sesión</button>
+            <button className="form-btn" type="submit" >Iniciar Sesión</button>
             </Form>
         </Formik>
     )

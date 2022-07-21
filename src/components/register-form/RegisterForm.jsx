@@ -128,7 +128,7 @@ const formik = useFormik({
             {formik.touched.email && formik.errors.email ? 
             <span className="error-message">{formik.errors.email}</span> : ""}
 
-            <button className="custom-btn" type="submit" >Registrarme</button>
+            <button className="form-btn" type="submit" >Registrarme</button>
             </Form>
         </Formik>
     )

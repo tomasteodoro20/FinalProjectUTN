@@ -7,16 +7,19 @@
 .profile-list {
     display: flex;    
     flex-direction: column;    
-    color: #fff;
+    color: #5e25b9;
     margin-left: 1.5em;
     list-style: none;
     line-height: 2em;
 }
 
+.profile-list span{
+  color: #fff;
+}
+
 .profile-data{
   flex-wrap: wrap;
   align-content: center;
-
 }
 
 .delete-account-btn {
@@ -35,17 +38,18 @@
     background-color: #240a4e;
   }
 
-  @media(max-width:700px) {
+  @media(max-width:768px) {
     .gif-sonic-style {
       height: 150px;
   }
   }
 
-  @media(max-width:520px) {
+  @media(max-width:630px) {
     .gif-sonic-style {
       display: none;
   }
     .profile-list{
-      margin-left: 0
+      margin-left: 0;
+      padding: 2em 1em;
   }
   }

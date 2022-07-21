@@ -7,7 +7,7 @@
     margin: 20px;
 }
 
-.custom-btn {
+.form-btn {
     display: block;
     background: #330D71 !important;
     color: #fff;
@@ -19,7 +19,7 @@
     margin-top: 1rem;
   }
 
-.custom-btn:hover {
+.form-btn:hover {
     color: #fff !important;
     background-color: #240a4e !important;  
 }

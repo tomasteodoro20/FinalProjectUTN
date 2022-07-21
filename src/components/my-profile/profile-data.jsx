@@ -26,10 +26,10 @@ function ProfileData () {
     return (
         <>
         <ul className="profile-list my-auto">
-            <li>Usuario: {values.username}</li>
+            <li>Usuario: <span>{values.username}</span></li>
             <li>Nombre: <span className="text-capitalize">{values.firstname}</span></li> 
             <li>Apellido: <span className="text-capitalize">{values.lastname}</span></li>
-            <li>E-mail: {values.email}</li>
+            <li>E-mail: <span>{values.email}</span></li>
         </ul>
         </>
     )

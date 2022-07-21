@@ -18,11 +18,7 @@ const DeleteAccountBtn = () => {
             })
         }
     return (
-        <>
-            <Link to="/Home">
-                <button className='delete-account-btn' type='submit' onClick={handleClick}>Eliminar cuenta 🗑 </button>
-            </Link>
-        </>
+        <button className='delete-account-btn' type='submit' onClick={handleClick}>Eliminar cuenta 🗑 </button>        
     )
 }
 
